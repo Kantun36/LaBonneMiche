@@ -15,9 +15,19 @@
             {#{{ encore_entry_script_tags('app') }}#}
         {% endblock %}
     </head>
-    
+    <header>
+        <p>
+        <button>Nos Produits </button>
+        <button> Nos Actualités</button>
+        <img src="{{ asset('imgs/logobeigenoir.png') }}" alt="Logo LaBonneMiche" height="64" width="64"/>
+        <button> Notre Histoire</button>
+        <button> Forum</button>
+            <button> Panier</button>
+            <button> Profil</button>
+        </p>
+    </header>
     <body>
         {% block body %}{% endblock %}
-        <p> Jean gros baiseur</p>
+        <p> </p>
     </body>
 </html>
