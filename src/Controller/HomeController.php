@@ -12,4 +12,28 @@ class HomeController extends AbstractController
         return $this-> render('base.html.twig' , ['controller_name' => 'HomeController',
             ]);
     }
+
+    public function produits(): Response
+    {
+        return $this-> render('produits.html.twig' , ['controller_name' => 'HomeController',
+        ]);
+    }
+
+    public function actualite(): Response
+    {
+        return $this-> render('actualite.html.twig' , ['controller_name' => 'HomeController',
+        ]);
+    }
+
+    public function histoire(): Response
+    {
+        return $this-> render('histoire.html.twig' , ['controller_name' => 'HomeController',
+        ]);
+    }
+
+    public function forum(): Response
+    {
+        return $this-> render('forum.html.twig' , ['controller_name' => 'HomeController',
+        ]);
+    }
 }

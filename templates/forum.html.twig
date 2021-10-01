@@ -1,8 +1,6 @@
 <!DOCTYPE html>
 
 <html lang="fr">
-<link rel="stylesheet" href="assets/styles/base.css">
-
     <head>
         <meta charset="UTF-8">
         <link rel="icon" type="image/x-icon" href=" {{  asset('logobeigenoir.ico') }}" sizes="120x120" />
@@ -19,7 +17,7 @@
     </head>
     <header>
         <p>
-        <button class="buttonHome" onclick="location.href='https://127.0.0.1:8000/produits'" type=button>Nos Produits </button>
+        <button onclick="location.href='https://127.0.0.1:8000/produits'" type=button>Nos Produits </button>
         <button onclick="location.href='https://127.0.0.1:8000/actualite'" type=button> Nos Actualités</button>
         <img src="{{ asset('imgs/logobeigenoir.png') }}" onclick="location.href='https://127.0.0.1:8000'" alt="Logo LaBonneMiche" height="64" width="64"/>
         <button onclick="location.href='https://127.0.0.1:8000/histoire'" type=button> Notre Histoire</button>
@@ -30,7 +28,7 @@
     </header>
     <body>
         {% block body %}{% endblock %}
-        <p> </p>
+        <p> NOTRE FORUM</p>
     </body>
 <footer>
     <div>

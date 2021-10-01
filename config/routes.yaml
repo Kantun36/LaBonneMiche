@@ -1,3 +1,19 @@
 index:
     path: /
     controller: App\Controller\HomeController::home
+
+produits:
+    path: /produits
+    controller : App\Controller\HomeController::produits
+
+actualite:
+    path: /actualite
+    controller : App\Controller\HomeController::actualite
+
+histoire:
+    path: /histoire
+    controller : App\Controller\HomeController::histoire
+
+forum:
+    path: /forum
+    controller : App\Controller\HomeController::forum
