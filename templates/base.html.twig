@@ -19,42 +19,178 @@
     </head>
     <header>
         <p>
-        <button class="buttonHome" onclick="location.href='https://127.0.0.1:8000/produits'" type=button>Nos Produits </button>
-        <button onclick="location.href='https://127.0.0.1:8000/actualite'" type=button> Nos Actualités</button>
+        <button class="buttonHome" onclick="location.href='https://127.0.0.1:8000/produits'" type=button>
+            Nos Produits
+        </button>
+        <button onclick="location.href='https://127.0.0.1:8000/actualite'" type=button>
+            Nos Actualités
+        </button>
         <img src="{{ asset('imgs/logobeigenoir.png') }}" onclick="location.href='https://127.0.0.1:8000'" alt="Logo LaBonneMiche" height="64" width="64"/>
-        <button onclick="location.href='https://127.0.0.1:8000/histoire'" type=button> Notre Histoire</button>
-        <button onclick="location.href='https://127.0.0.1:8000/forum'" type=button> Forum</button>
-            <button> Panier</button>
-            <button> Profil</button>
+        <button onclick="location.href='https://127.0.0.1:8000/histoire'" type=button>
+            Notre Histoire
+        </button>
+        <button onclick="location.href='https://127.0.0.1:8000/forum'" type=button>
+            Forum
+        </button>
+        <button>
+            <img src="{{ asset('imgs/panier.png') }}" onclick="location.href=''" alt="panier" height="64" width="64"/>
+        </button>
+        <button>
+            <img src="{{ asset('imgs/Profil.png') }}" onclick="location.href=''" alt="profil" height="64" width="64"/>
+         </button>
+
+
+        <ul >
+            <li>
+                Pains
+                <ul>
+                    <li>
+                       <a href="">
+                           Pain
+                       </a>
+                    </li>
+                    <li>
+                        <a href="">
+                            Baguette
+                        </a>
+                    </li>
+                    <li>
+                        <a href="">
+                            Miche
+                        </a>
+                    </li>
+                </ul>
+            </li>
+            <li>
+                Patisserie
+                <ul id="sous-categorie">
+                    <li>
+                       <a href="">
+                           Patisserie individuel
+                       </a>
+                    </li>
+                    <li>
+                        <a href="">
+                            Gateau
+                        </a>
+                    </li>
+                    <li>
+                        <a href="">
+                            Dessert
+                        </a>
+                    </li>
+                </ul>
+            </li>
+            <li>
+                Viennoiserie
+                <ul id="sous-categorie">
+                    <li>
+                        <a href="">
+                            Individuel
+                        </a>
+                    </li>
+                    <li>
+                        <a href="">
+                            En Lot
+                        </a>
+                    </li>
+                </ul>
+            </li>
+            <li>
+                Sandwich et Salade
+                <ul id="sous-categorie">
+                    <li>
+                        <a href="">
+                            Sandwich
+                        </a>
+                    </li>
+                    <li>
+                        <a href="">
+                            Salade
+                        </a>
+                    </li>
+                    <li>
+                        <a href="">
+                            Plats chauds
+                        </a>
+
+                    </li>
+                </ul>
+            </li>
+        </ul>
         </p>
     </header>
+
+
+
     <body>
         {% block body %}{% endblock %}
         <p> </p>
     </body>
+
+
+
 <footer>
     <div>
-        <p> L'Entreprise </p>
-        <a href="https://127.0.0.1:8000/Histoire">L'histoire</a><br/>
-        <a href="https://127.0.0.1:8000/Engagement">Notre engagement</a><br/>
-        <a href="https://127.0.0.1:8000/Franchise">Devenir franchisé</a><br/>
+        <p>
+            L'Entreprise
+        </p>
+        <a href="https://127.0.0.1:8000/Histoire">
+            L'histoire
+        </a>
+        <br/>
+        <a href="https://127.0.0.1:8000/Engagement">
+            Notre engagement
+        </a>
+        <br/>
+        <a href="https://127.0.0.1:8000/Franchise">
+            Devenir franchisé
+        </a>
+        <br/>
     </div>
     <div>
-        <p>Nos services</p>
-        <a href="https://127.0.0.1:8000/FAQ">FAQ</a><br/>
-        <a href="https://127.0.0.1:8000/Contact">Contactez nous</a><br/>
-        <a href="https://127.0.0.1:8000/PaySecure">Paiement sécurisé</a><br/>
+        <p>
+            Nos services
+        </p>
+        <a href="https://127.0.0.1:8000/FAQ">
+            FAQ
+        </a>
+        <br/>
+        <a href="https://127.0.0.1:8000/Contact">
+            Contactez nous
+        </a>
+        <br/>
+        <a href="https://127.0.0.1:8000/PaySecure">
+            Paiement sécurisé
+        </a>
+        <br/>
     </div>
     <div>
-        <p>A propos</p>
-        <a href="https://127.0.0.1:8000/CGV">CGV</a><br/>
-        <a href="https://127.0.0.1:8000/Mentions">Mentions légales</a><br/>
-        <a href="https://127.0.0.1:8000/DonneePers">Données personnelles</a><br/>
+        <p>
+            A propos
+        </p>
+        <a href="https://127.0.0.1:8000/CGV">
+            CGV
+        </a>
+        <br/>
+        <a href="https://127.0.0.1:8000/Mentions">
+            Mentions légales
+        </a>
+        <br/>
+        <a href="https://127.0.0.1:8000/DonneePers">
+            Données personnelles
+        </a>
+        <br/>
     </div>
     <div>
-        <p>Les actus de la miche</p>
+        <p>
+            Les actus de la miche
+        </p>
         <a href="">
-            <img src="{{ asset('imgs/logobeigenoir.png') }}" onclick="location.href=''" alt="Facebook" height="64" width="64"/>
+            <img src="{{ asset('imgs/facebook.png') }}" onclick="location.href=''" alt="Facebook" height="64" width="64"/>
+        </a>
+        <a href="">
+            <img src="{{ asset('imgs/instagram.png') }}" onclick="location.href=''" alt="Instagram" height="64" width="64"/>
         </a>
     </div>
 </footer>
