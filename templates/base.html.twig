@@ -1,7 +1,7 @@
 <!DOCTYPE html>
 
 <html lang="fr">
-<link rel="stylesheet" href="assets/styles/base.css">
+<link rel="stylesheet" href=" {{  asset('/style/base.css') }}">
 
     <head>
         <meta charset="UTF-8">
@@ -19,14 +19,86 @@
     </head>
     <header>
         <p>
-        <button class="buttonHome" onclick="location.href='https://127.0.0.1:8000/produits'" type=button>Nos Produits </button>
-        <button onclick="location.href='https://127.0.0.1:8000/actualite'" type=button> Nos Actualités</button>
-        <img src="{{ asset('imgs/logobeigenoir.png') }}" onclick="location.href='https://127.0.0.1:8000'" alt="Logo LaBonneMiche" height="64" width="64"/>
-        <button onclick="location.href='https://127.0.0.1:8000/histoire'" type=button> Notre Histoire</button>
-        <button onclick="location.href='https://127.0.0.1:8000/forum'" type=button> Forum</button>
-            <button> Panier</button>
-            <button> Profil</button>
+        <ul>
+            <li>
+                <a class="buttonHeader" onclick="location.href='https://127.0.0.1:8000/produits'">
+                    Nos produits
+                    <span></span>
+                    <span></span>
+                    <span></span>
+
+
+                    <i class="fa fa-buttonHeader" aria-hidden="true"></i>
+                </a>
+            </li>
+            <li>
+                <a class="buttonHeader" onclick="location.href='https://127.0.0.1:8000/article'">
+                    Nos articles
+                    <span></span>
+                    <span></span>
+                    <span></span>
+
+                    <i class="fa fa-buttonHeader" aria-hidden="true"></i>
+                </a>
+            </li>
+            <img src="{{ asset('imgs/logobeigenoir.png') }}" onclick="location.href='https://127.0.0.1:8000'" alt="Logo LaBonneMiche" height="64" width="64"/>
+            <li>
+                <a class="buttonHeader" onclick="location.href='https://127.0.0.1:8000/histoire'">
+                    Notre histoire
+                    <span></span>
+                    <span></span>
+                    <span></span>
+
+                    <i class="fa fa-buttonHeader" aria-hidden="true"></i>
+                </a>
+            </li>
+            <li>
+                <a class="buttonHeader" onclick="location.href='https://127.0.0.1:8000/forum'">
+                    Forum
+                    <span></span>
+                    <span></span>
+                    <span></span>
+
+                    <i class="fa fa-buttonHeader" aria-hidden="true"></i>
+                </a>
+            </li>
+        </ul>
+
+
+        <button class="buttonHome"> Panier</button>
+        <div class="dropdown">
+            <button  onclick="myFunction()" class="buttonHome"><input type=image src="{{ asset('imgs/logobeigenoir.png') }}" height="44" value=/></button>
+            <div id="myDropdown" class="dropdown-content">
+                <a href="https://127.0.0.1:8000/login">Login</a>
+                <a href="https://127.0.0.1:8000/register">Register</a>
+                <a href="https://127.0.0.1:8000/logout">Logout</a>
+            </div>
+        </div>
         </p>
+        <script>
+            /* When the user clicks on the button,
+            toggle between hiding and showing the dropdown content */
+            function myFunction() {
+                document.getElementById("myDropdown").classList.toggle("show");
+            }
+
+            // Close the dropdown if the user clicks outside of it
+            window.onclick = function(event) {
+                if (!event.target.matches('.dropbtn')) {
+
+                    var dropdowns = document.getElementsByClassName("dropdown-content");
+                    var i;
+                    for (i = 0; i < dropdowns.length; i++) {
+                        var openDropdown = dropdowns[i];
+                        if (openDropdown.classList.contains('show')) {
+                            openDropdown.classList.remove('show');
+                        }
+                    }
+                }
+            }
+        </script>
+
+
     </header>
     <body>
         {% block body %}{% endblock %}
