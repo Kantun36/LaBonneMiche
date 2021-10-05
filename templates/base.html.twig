@@ -22,7 +22,7 @@
         <ul>
             <li>
                 <a class="buttonHeader" onclick="location.href='https://127.0.0.1:8000/produits'">
-                    Nos produits
+                    <div class="textButton">Nos produits </div>
                     <span></span>
                     <span></span>
                     <span></span>
@@ -33,7 +33,7 @@
             </li>
             <li>
                 <a class="buttonHeader" onclick="location.href='https://127.0.0.1:8000/article'">
-                    Nos articles
+                    <div class="textButton">Nos Actualités </div>
                     <span></span>
                     <span></span>
                     <span></span>
@@ -41,10 +41,10 @@
                     <i class="fa fa-buttonHeader" aria-hidden="true"></i>
                 </a>
             </li>
-            <img src="{{ asset('imgs/logobeigenoir.png') }}" onclick="location.href='https://127.0.0.1:8000'" alt="Logo LaBonneMiche" height="64" width="64"/>
+            <img src="{{ asset('imgs/logobeigenoir.png') }}" onclick="location.href='https://127.0.0.1:8000'" alt="Logo LaBonneMiche" height="100" width="100"/>
             <li>
                 <a class="buttonHeader" onclick="location.href='https://127.0.0.1:8000/histoire'">
-                    Notre histoire
+                    <div class="textButton">Notre Histoire </div>
                     <span></span>
                     <span></span>
                     <span></span>
@@ -54,7 +54,7 @@
             </li>
             <li>
                 <a class="buttonHeader" onclick="location.href='https://127.0.0.1:8000/forum'">
-                    Forum
+                    <div class="textButton">Forum </div>
                     <span></span>
                     <span></span>
                     <span></span>
@@ -62,27 +62,27 @@
                     <i class="fa fa-buttonHeader" aria-hidden="true"></i>
                 </a>
             </li>
+            <button class="buttonHome"> <input type=image src="{{ asset('imgs/panier.jpeg') }}" height="44" value=/></button>
+            <div class="dropdown">
+                <button  onclick="myFunction()" class="buttonHome"><input type=image src="{{ asset('imgs/profil.jpeg') }}" height="44" value=/></button>
+                <div id="myDropdown" class="dropdown-content">
+                    <a href="https://127.0.0.1:8000/login">Login</a>
+                    <a href="https://127.0.0.1:8000/register">Register</a>
+                    <a href="https://127.0.0.1:8000/logout">Logout</a>
+                </div>
+            </div>
+
         </ul>
 
 
-        <button class="buttonHome"> Panier</button>
-        <div class="dropdown">
-            <button  onclick="myFunction()" class="buttonHome"><input type=image src="{{ asset('imgs/logobeigenoir.png') }}" height="44" value=/></button>
-            <div id="myDropdown" class="dropdown-content">
-                <a href="https://127.0.0.1:8000/login">Login</a>
-                <a href="https://127.0.0.1:8000/register">Register</a>
-                <a href="https://127.0.0.1:8000/logout">Logout</a>
-            </div>
-        </div>
-        </p>
+
         <script>
-            /* When the user clicks on the button,
-            toggle between hiding and showing the dropdown content */
+
             function myFunction() {
                 document.getElementById("myDropdown").classList.toggle("show");
             }
 
-            // Close the dropdown if the user clicks outside of it
+
             window.onclick = function(event) {
                 if (!event.target.matches('.dropbtn')) {
 
@@ -105,6 +105,9 @@
         <p> </p>
     </body>
 <footer>
+
+    <ul class="footer">
+
     <div>
         <p> L'Entreprise </p>
         <a href="https://127.0.0.1:8000/Histoire">L'histoire</a><br/>
@@ -123,5 +126,6 @@
         <a href="https://127.0.0.1:8000/Mentions">Mentions légales</a><br/>
         <a href="https://127.0.0.1:8000/DonneePers">Données personnelles</a><br/>
     </div>
+    </ul>
 </footer>
 </html>

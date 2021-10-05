@@ -29,3 +29,7 @@ app_logout:
 app_register:
     path: /register
     controller : App\Controller\RegistrationController::register
+
+panier:
+    path: /panier
+    controller: App\Controller\HomeController::histoire

@@ -1,9 +1,13 @@
 header {
     background-color : #e3b364;
 }
+
+.footer {
+    top:90%;
+}
 .buttonHome {
-    background-color : #e3b364;
     color : black;
+    border : 0px;
 }
 
 /* Dropdown Button */
@@ -55,9 +59,14 @@ body {
     padding:0;
     background: #ebebeb;
 }
+
+.textButton{
+    font-size:40%;
+
+}
 ul {
     position:absolute;
-    
+    top:10%;
     left:50%;
     transform:translate(-50%,-50%);
     margin:0;
