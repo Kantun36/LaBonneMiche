@@ -18,20 +18,23 @@
         {% endblock %}
     </head>
     <header>
-        <p>
-        <ul>
+       <div class="Header">
+        <ul class="head">
             <li>
+                <button class="buttonHome">
                 <a class="buttonHeader" onclick="location.href='https://127.0.0.1:8000/produits'">
                     <div class="textButton">Nos produits </div>
                     <span></span>
-                    <span></span>
-                    <span></span>
+                   <span></span>
+
 
 
                     <i class="fa fa-buttonHeader" aria-hidden="true"></i>
                 </a>
+                </button>
             </li>
             <li>
+                <button class="buttonHome">
                 <a class="buttonHeader" onclick="location.href='https://127.0.0.1:8000/article'">
                     <div class="textButton">Nos Actualités </div>
                     <span></span>
@@ -40,9 +43,13 @@
 
                     <i class="fa fa-buttonHeader" aria-hidden="true"></i>
                 </a>
+                </button>
             </li>
-            <img src="{{ asset('imgs/logobeigenoir.png') }}" onclick="location.href='https://127.0.0.1:8000'" alt="Logo LaBonneMiche" height="100" width="100"/>
-            <li>
+            <div class="logo">
+            <img src="{{ asset('imgs/logobeigenoir.png') }}" onclick="location.href='https://127.0.0.1:8000'" alt="Logo LaBonneMiche" height="150" width="150"/>
+            </div>
+                <li>
+                    <button class="buttonHome">
                 <a class="buttonHeader" onclick="location.href='https://127.0.0.1:8000/histoire'">
                     <div class="textButton">Notre Histoire </div>
                     <span></span>
@@ -51,8 +58,10 @@
 
                     <i class="fa fa-buttonHeader" aria-hidden="true"></i>
                 </a>
+                    </button>
             </li>
             <li>
+                <button class="buttonHome">
                 <a class="buttonHeader" onclick="location.href='https://127.0.0.1:8000/forum'">
                     <div class="textButton">Forum </div>
                     <span></span>
@@ -61,16 +70,14 @@
 
                     <i class="fa fa-buttonHeader" aria-hidden="true"></i>
                 </a>
+                </button>
             </li>
-            <button class="buttonHome"> <input type=image src="{{ asset('imgs/panier.jpeg') }}" height="44" value=/></button>
-            <div class="dropdown">
-                <button  onclick="myFunction()" class="buttonHome"><input type=image src="{{ asset('imgs/profil.jpeg') }}" height="44" value=/></button>
-                <div id="myDropdown" class="dropdown-content">
-                    <a href="https://127.0.0.1:8000/login">Login</a>
-                    <a href="https://127.0.0.1:8000/register">Register</a>
-                    <a href="https://127.0.0.1:8000/logout">Logout</a>
-                </div>
-            </div>
+
+            <button class="buttonHome"> <input type=image src="{{ asset('imgs/panier.png') }}" height="30" value=/></button>
+
+                <button class="buttonHome"><input type=image src="{{ asset('imgs/profil.png') }}" height="30" value=/></button>
+
+
 
         </ul>
 
@@ -98,10 +105,11 @@
             }
         </script>
 
-
+       </div>
     </header>
     <body>
         {% block body %}{% endblock %}
+
         <p> </p>
     </body>
 <footer>
