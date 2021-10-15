@@ -73,9 +73,9 @@
                 </button>
             </li>
 
-            <button class="buttonHome"> <input type=image src="{{ asset('imgs/panier.png') }}" height="30" value=/></button>
+            <button class="buttonHome">  <a class="buttonHeader" onclick="location.href='https://127.0.0.1:8000/panier'"><input type=image src="{{ asset('imgs/panier.png') }}" height="30" value=/></a></button>
 
-                <button class="buttonHome"><input type=image src="{{ asset('imgs/profil.png') }}" height="30" value=/></button>
+            <button class="buttonHome"><a class="buttonHeader" onclick="location.href='https://127.0.0.1:8000/login'"><input type=image src="{{ asset('imgs/profil.png') }}" height="30" value=/></a></button>
 
 
 
@@ -109,6 +109,8 @@
     </header>
     <body>
         {% block body %}{% endblock %}
+
+
 
         <p> </p>
     </body>
