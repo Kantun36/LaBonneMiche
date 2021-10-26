@@ -1,4 +1,7 @@
-
+@font-face {
+  font-family: 'Brand';
+  src: url('/assets/fonts/Brand.ttf') format("ttf");
+}
 .navbar{
   background: #e3b364;
 }
@@ -14,9 +17,97 @@ footer{
 
 
 
+#buttonHeader {
+
+  background-color: #e3b364;
+  &:hover {
+    color: black;
+
+    transition: transform .5s;
+    span {
+      background: black;
+
+      transition: transform .5s;
+    }
+  }
+}
 
 
+a {
+      background-color: #e3b364;
+      display: block;
+      position: relative;
+      width: 100%;
+      height: 100%;
+      line-height: 100%;
+      font-size: 130%;
+      text-align: center;
+      text-decoration: none;
+      color: #404040;
+      margin: 0 30px;
+      transition: .5s;
+      font-family: Brand;
+      span {
+        position: absolute;
+        transition: transform .5s;
 
+        &:nth-child(3) {
+          width: 80%;
+          margin-left : 10%;
+          height: 3%;
+          background: #404040;
+          bottom: 0;
+          left: 0;
+          transform-origin: right;
+        }
+        &:nth-child(2) {
+          top: 0;
+          top: 0;
+          left: 0;
+          left: 0;
+          transform: scale(0);
+          transform: scale(0);
+          transform-origin: right;
+          transform-origin: right;
+        }
+        &:nth-child(4) {
+          top: 0;
+          right: 0;
+          transform: scale(0);
+          transform-origin: right;
+        }
+      }
+      &:hover {
+        span {
+          &:nth-child(1) {
+            transform: scaleX(0);
+            transform-origin: right;
+            transition: transform .5s;
+          }
+          &:nth-child(3) {
+            transform: scaleX(0);
+            transform-origin: right;
+            transition: transform .5s;
+          }
+          &:nth-child(2) {
+            transform: scale(1);
+            transform-origin: right;
+            transition: transform .5s;
+          }
+          &:nth-child(4) {
+            transform: scale(1);
+            transform-origin: right;
+            transition: transform .5s;
+          }
+        }
+        &:nth-child(3) {
+          color: black;
+        }
+        &:nth-child(4) {
+          color: black;
+        }
+      }
+    }
 
 
 
