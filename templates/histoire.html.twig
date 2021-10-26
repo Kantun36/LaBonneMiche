@@ -1,7 +1,6 @@
 <!DOCTYPE html>
 
 <html lang="fr">
-<link rel="stylesheet" href=" {{  asset('/style/base.css') }}">
     <head>
         <meta charset="UTF-8">
         <link rel="icon" type="image/x-icon" href=" {{  asset('logobeigenoir.ico') }}" sizes="120x120" />
@@ -9,46 +8,341 @@
         {# Run `composer require symfony/webpack-encore-bundle`
            and uncomment the following Encore helpers to start using Symfony UX #}
         {% block stylesheets %}
-            {#{{ encore_entry_link_tags('app') }}#}
+            {{ encore_entry_link_tags('app') }}
         {% endblock %}
 
         {% block javascripts %}
-            {#{{ encore_entry_script_tags('app') }}#}
+            {{ encore_entry_script_tags('app') }}
         {% endblock %}
     </head>
-    <header>
-        <p>
-        <button onclick="location.href='https://127.0.0.1:8000/produits'" type=button>Nos Produits </button>
-        <button onclick="location.href='https://127.0.0.1:8000/actualite'" type=button> Nos Actualités</button>
-        <img src="{{ asset('imgs/logobeigenoir.png') }}" onclick="location.href='https://127.0.0.1:8000'" alt="Logo LaBonneMiche" height="64" width="64"/>
-        <button onclick="location.href='https://127.0.0.1:8000/histoire'" type=button> Notre Histoire</button>
-        <button onclick="location.href='https://127.0.0.1:8000/forum'" type=button> Forum</button>
-            <button> Panier</button>
-            <button> Profil</button>
-        </p>
-    </header>
+    {{ include('header.html.twig') }}
+
     <body>
-        {% block body %}{% endblock %}
-        <p> NOTRES HISTOIRE </p>
+    {% block body %}{% endblock %}
+    <div class="container">
+        <h1 class="text-center">Une histoire de miche familiale depuis 500 av J.C.</h1>
+        <h5 >
+            Qu'est-ce qu'une miche ? C'est avant tout un sens du partage qui dure depuis plus de 2500 ans. Et c'est ce que pour quoi nous nous battons depuis tout
+            ce temps : se retrouver entre amis, famille ou même une rencontre professionnelle autour d'une bonne grosse miche pour que ce moment soit le plus convivial
+            possible.
+        </h5>
+    </div>
+
+    <div class="timeline-container">
+
+
+        <div class="timeline-block timeline-block-right">
+            <div class="col-5">
+                <img src="{{ asset('imgs/logobeigenoir.png') }}" width="50">
+            </div>
+                <div class="col-5">
+                    <div class="marker"></div>
+                    <div class="timeline-content">
+                        <h3>~500 av J.C</h3>
+                        <span></span>
+                        <p>Première trace d'une miche de pain gravée "BONNE MICHE" Depuis cette date nous en avons retrouvé des centaines à travers le monde à toutes
+                            les époques</p>
+                </div>
+        </div>
+        </div>
+
+        <div class="timeline-block timeline-block-left">
+            <div class="marker"></div>
+            <div class="timeline-content">
+                <h3>28</h3>
+                <span></span>
+                <p>Première trace d'échoppe La Bonne Miche dans un village d'irréductible gaulois</p>
+            </div>
+        </div>
+
+        <div class="timeline-block timeline-block-right">
+            <div class="marker"></div>
+            <div class="timeline-content">
+                <h3>286</h3>
+                <span></span>
+                <p>1er livre d'archives de vente de miche La Bonne Miche retrouvé et restauré. On y retrouve notamment la Miche qui reste un produit-phare encore
+                    aujourd'hui</p>
+            </div>
+        </div>
+
+        <div class="timeline-block timeline-block-left">
+            <div class="marker"></div>
+            <div class="timeline-content">
+                <h3>485</h3>
+                <span></span>
+                <p>La Bonne Miche devient fournisseur officiel de la cour du roi Clovis 1er. On y relève plus de 35 tonnes de miche dégustée par an par la cour du roi
+                    pendant son règne</p>
+            </div>
+        </div>
+
+        <div class="timeline-block timeline-block-right">
+            <div class="marker"></div>
+            <div class="timeline-content">
+                <h3>512</h3>
+                <span></span>
+                <p>Après la mort du roi Clovis 1er, l'exclusivité n'est plus et La Bonne Miche exporte son art dans toute l'Europe</p>
+            </div>
+        </div>
+
+
+        <div class="timeline-block timeline-block-left">
+            <div class="marker"></div>
+            <div class="timeline-content">
+                <h3>741</h3>
+                <span></span>
+                <p>Devenue repas traditionnel européen, La Bonne Miche connaît sa première crise financière et politique après que Charles Martel, duc des Francs, se
+                    soit étouffé avec une miche de La Bonne Miche</p>
+            </div>
+        </div>
+
+        <div class="timeline-block timeline-block-right">
+            <div class="marker"></div>
+            <div class="timeline-content">
+                <h3>1257</h3>
+                <span></span>
+                <p>Après plus de 500 ans de bannissement de toute l'Europe et d'une véritable chasse a l'homme pour éradiquer La Bonne Miche, Louis IX décide de
+                    stopper cette chasse jugeant que : c'est quand même vachement bon une grosse miche</p>
+            </div>
+        </div>
+
+        <div class="timeline-block timeline-block-left">
+            <div class="marker"></div>
+            <div class="timeline-content">
+                <h3>1298</h3>
+                <span></span>
+                <p>La Bonne Miche connaît son apogée. Grâce à l'exportation et la vente de dizaines de tonnes de miches par jour, la firme explose (les réparations ont couté un peu cher)</p>
+            </div>
+        </div>
+
+        <div class="timeline-block timeline-block-right">
+            <div class="marker"></div>
+            <div class="timeline-content">
+                <h3>1604</h3>
+                <span></span>
+                <p>Grâce à l'essor économique de La Bonne Miche, la compagnie française des Indes orientaux est créée ce qui permet encore une fois à La Bonne
+                    Miche de toucher gros</p>
+            </div>
+        </div>
+
+        <div class="timeline-block timeline-block-left">
+            <div class="marker"></div>
+            <div class="timeline-content">
+                <h3>1630</h3>
+                <span></span>
+                <p>Suite à plusieurs épidémies de peste en Europe durant les trois dernières décennies la pandémiche est créée en hommage aux victimes</p>
+            </div>
+        </div>
+
+        <div class="timeline-block timeline-block-right">
+            <div class="marker"></div>
+            <div class="timeline-content">
+                <h3>1806</h3>
+                <span></span>
+                <p>Nouvelle crise pour La Bonne Miche suite aux conquêtes de l'empereur Napoléon Bonaparte qui réduisent considérablement le nombre de clients
+                    potentiels dans toute l'Europe
+                </p>
+            </div>
+        </div>
+
+        <div class="timeline-block timeline-block-left">
+            <div class="marker"></div>
+            <div class="timeline-content">
+                <h3>1914-18 / 1939-45</h3>
+                <span></span>
+                <p>Durant les 2 Grandes guerres 85% des repas des soldats étaient fournis par La Bonne Miche qui n'a cessé de combattre l'envahisseur
+                    à l'aide de grosse miche dans l'oignon
+                </p>
+            </div>
+        </div>
+
+        <div class="timeline-block timeline-block-right">
+            <div class="marker"></div>
+            <div class="timeline-content">
+                <h3>2020</h3>
+                <span></span>
+                <p>La Bonne Miche devient sponsor officiel de la FIFA</p>
+            </div>
+        </div>
+    </div>
+
+
+
+
+
+    <div class="container pb-5">
+        <h4>Timeline Style : Demo-9</h4>
+        <div class="row ">
+            <div class="col-md-12">
+                <div class="main-timeline">
+                    <div class="timeline">
+                        <div class="timeline-content">
+                            <div class="circle">
+                                <span>
+                                    <svg xmlns="http://www.w3.org/2000/svg"   width="180px" height="180px"  fill="currentColor" class="bi bi-person-circle" viewBox="0 0 18 18">
+                                        <path d="M11 6a3 3 0 1 1-6 0 3 3 0 0 1 6 0z"/>
+                                        <path fill-rule="evenodd" d="M0 8a8 8 0 1 1 16 0A8 8 0 0 1 0 8zm8-7a7 7 0 0 0-5.468 11.37C3.242 11.226 4.805 10 8 10s4.757 1.225 5.468 2.37A7 7 0 0 0 8 1z"/>
+                                    </svg>
+                                </span>
+                            </div>
+                            <div class="content">
+                                <span class="year">~500 av J.C</span>
+                                <h4 class="title">Web Desginer</h4>
+                                <p class="description">
+                                    Première trace d'une miche de pain gravée "BONNE MICHE" Depuis cette date nous en avons retrouvé des centaines à travers le monde à toutes
+                                    les époques
+                                </p>
+                                <div class="icon"><span></span></div>
+                            </div>
+                        </div>
+                    </div>
+                    <div class="timeline">
+                        <div class="timeline-content">
+                            <div class="circle"><span></span></div>
+                            <div class="content">
+                                <span class="year">28</span>
+                                <h4 class="title">Web Developer</h4>
+                                <p class="description">
+                                    Première trace d'échoppe La Bonne Miche dans un village d'irréductible gaulois                                </p>
+                                <div class="icon"><span></span></div>
+                            </div>
+                        </div>
+                    </div>
+                    <div class="timeline">
+                        <div class="timeline-content">
+                            <div class="circle"><span><i class="fa fa-briefcase"></i></span></div>
+                            <div class="content">
+                                <span class="year">286</span>
+                                <h4 class="title">Web Desginer</h4>
+                                <p class="description">
+                                    1er livre d'archives de vente de miche La Bonne Miche retrouvé et restauré. On y retrouve notamment la Miche qui reste un produit-phare encore
+                                    aujourd'hui
+                                </p>
+                                <div class="icon"><span></span></div>
+                            </div>
+                        </div>
+                    </div>
+                    <div class="timeline">
+                        <div class="timeline-content">
+                            <div class="circle"><span><i class="fa fa-mobile"></i></span></div>
+                            <div class="content">
+                                <span class="year">485</span>
+                                <h4 class="title">Web Developer</h4>
+                                <p class="description">
+                                    La Bonne Miche devient fournisseur officiel de la cour du roi Clovis 1er. On y relève plus de 35 tonnes de miche dégustée par an par la cour du roi
+                                    pendant son règne
+                                </p>
+                                <div class="icon"><span></span></div>
+                            </div>
+                        </div>
+                    </div>
+                    <div class="timeline">
+                        <div class="timeline-content">
+                            <div class="circle"><span><i class="fa fa-mobile"></i></span></div>
+                            <div class="content">
+                                <span class="year">512</span>
+                                <h4 class="title">Web Developer</h4>
+                                <p class="description">
+                                    Après la mort du roi Clovis 1er, l'exclusivité n'est plus et La Bonne Miche exporte son art dans toute l'Europe
+                                </p>
+                                <div class="icon"><span></span></div>
+                            </div>
+                        </div>
+                    </div>
+                    <div class="timeline">
+                        <div class="timeline-content">
+                            <div class="circle"><span><i class="fa fa-mobile"></i></span></div>
+                            <div class="content">
+                                <span class="year">741</span>
+                                <h4 class="title">Web Developer</h4>
+                                <p class="description">
+                                    Devenue repas traditionnel européen, La Bonne Miche connaît sa première crise financière et politique après que Charles Martel, duc des Francs, se
+                                    soit étouffé avec une miche de La Bonne Miche
+                                </p>
+                                <div class="icon"><span></span></div>
+                            </div>
+                        </div>
+                    </div>
+                    <div class="timeline">
+                        <div class="timeline-content">
+                            <div class="circle"><span><i class="fa fa-mobile"></i></span></div>
+                            <div class="content">
+                                <span class="year">1257</span>
+                                <h4 class="title">Web Developer</h4>
+                                <p class="description">
+                                    Après plus de 500 ans de bannissement de toute l'Europe et d'une véritable chasse a l'homme pour éradiquer La Bonne Miche, Louis IX décide de
+                                    stopper cette chasse jugeant que : c'est quand même vachement bon une grosse miche
+                                </p>
+                                <div class="icon"><span></span></div>
+                            </div>
+                        </div>
+                    </div>
+                    <div class="timeline">
+                        <div class="timeline-content">
+                            <div class="circle"><span><i class="fa fa-mobile"></i></span></div>
+                            <div class="content">
+                                <span class="year">1298</span>
+                                <h4 class="title">Web Developer</h4>
+                                <p class="description">
+                                    La Bonne Miche connaît son apogée. Grâce à l'exportation et la vente de dizaines de tonnes de miches par
+                                    jour, la firme explose (les réparations ont couté un peu cher)
+                                </p>
+                                <div class="icon"><span></span></div>
+                            </div>
+                        </div>
+                    </div>
+                    <div class="timeline">
+                        <div class="timeline-content">
+                            <div class="circle"><span><i class="fa fa-mobile"></i></span></div>
+                            <div class="content">
+                                <span class="year">2017 - 2018</span>
+                                <h4 class="title">Web Developer</h4>
+                                <p class="description">
+                                    La Bonne Miche devient fournisseur officiel de la cour du roi Clovis 1er. On y relève plus de 35 tonnes de miche dégustée par an par la cour du roi
+                                    pendant son règne
+                                </p>
+                                <div class="icon"><span></span></div>
+                            </div>
+                        </div>
+                    </div>
+                    <div class="timeline">
+                        <div class="timeline-content">
+                            <div class="circle"><span><i class="fa fa-mobile"></i></span></div>
+                            <div class="content">
+                                <span class="year">2017 - 2018</span>
+                                <h4 class="title">Web Developer</h4>
+                                <p class="description">
+                                    La Bonne Miche devient fournisseur officiel de la cour du roi Clovis 1er. On y relève plus de 35 tonnes de miche dégustée par an par la cour du roi
+                                    pendant son règne
+                                </p>
+                                <div class="icon"><span></span></div>
+                            </div>
+                        </div>
+                    </div>
+                    <div class="timeline">
+                        <div class="timeline-content">
+                            <div class="circle"><span><i class="fa fa-mobile"></i></span></div>
+                            <div class="content">
+                                <span class="year">2017 - 2018</span>
+                                <h4 class="title">Web Developer</h4>
+                                <p class="description">
+                                    La Bonne Miche devient fournisseur officiel de la cour du roi Clovis 1er. On y relève plus de 35 tonnes de miche dégustée par an par la cour du roi
+                                    pendant son règne
+                                </p>
+                                <div class="icon"><span></span></div>
+                            </div>
+                        </div>
+                    </div>
+
+                </div>
+            </div>
+        </div>
+    </div>
+
+
     </body>
-<footer>
-    <div>
-        <p> L'Entreprise </p>
-        <a href="https://127.0.0.1:8000/Histoire">L'histoire</a><br/>
-        <a href="https://127.0.0.1:8000/Engagement">Notre engagement</a><br/>
-        <a href="https://127.0.0.1:8000/Franchise">Devenir franchisé</a><br/>
-    </div>
-    <div>
-        <p>Nos services</p>
-        <a href="https://127.0.0.1:8000/FAQ">FAQ</a><br/>
-        <a href="https://127.0.0.1:8000/Contact">Contactez nous</a><br/>
-        <a href="https://127.0.0.1:8000/PaySecure">Paiement sécurisé</a><br/>
-    </div>
-    <div>
-        <p>A propos</p>
-        <a href="https://127.0.0.1:8000/CGV">CGV</a><br/>
-        <a href="https://127.0.0.1:8000/Mentions">Mentions légales</a><br/>
-        <a href="https://127.0.0.1:8000/DonneePers">Données personnelles</a><br/>
-    </div>
-</footer>
+
+
+
+
+    {{ include('footer.html.twig') }}
 </html>
