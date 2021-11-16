@@ -1,0 +1,108 @@
+<!DOCTYPE html>
+
+<html lang="fr">
+<link rel="stylesheet" href=" {{  asset('/style/base.css') }}">
+<head>
+    <meta charset="UTF-8">
+    <link rel="icon" type="image/x-icon" href=" {{  asset('logobeigenoir.ico') }}" sizes="120x120" />
+    <title>{% block title %}LaBonneMiche{% endblock %}</title>
+    {# Run `composer require symfony/webpack-encore-bundle`
+           and uncomment the following Encore helpers to start using Symfony UX #}
+    {% block stylesheets %}
+        {#{{ encore_entry_link_tags('app') }}#}
+    {% endblock %}
+
+    {% block javascripts %}
+        {#{{ encore_entry_script_tags('app') }}#}
+    {% endblock %}
+</head>
+<header>
+    <p>
+        <button onclick="location.href='https://127.0.0.1:8000/produits'" type=button>Nos Produits </button>
+        <button onclick="location.href='https://127.0.0.1:8000/actualite'" type=button> Nos Actualités</button>
+        <img src="{{ asset('imgs/logobeigenoir.png') }}" onclick="location.href='https://127.0.0.1:8000'" alt="Logo LaBonneMiche" height="64" width="64"/>
+        <button onclick="location.href='https://127.0.0.1:8000/histoire'" type=button> Notre Histoire</button>
+        <button onclick="location.href='https://127.0.0.1:8000/forum'" type=button> Forum</button>
+        <button> Panier</button>
+        <button> Profil</button>
+    </p>
+</header>
+<body>
+{% block body %}{% endblock %}
+<p> NOTRES HISTOIRE </p>
+</body>
+<footer>
+    <div>
+        <p> L'Entreprise </p>
+        <a href="https://127.0.0.1:8000/Histoire">L'histoire</a><br/>
+        <a href="https://127.0.0.1:8000/Engagement">Notre engagement</a><br/>
+        <a href="https://127.0.0.1:8000/Franchise">Devenir franchisé</a><br/>
+    </div>
+    <div>
+        <p>Nos services</p>
+        <a href="https://127.0.0.1:8000/FAQ">FAQ</a><br/>
+        <a href="https://127.0.0.1:8000/Contact">Contactez nous</a><br/>
+        <a href="https://127.0.0.1:8000/PaySecure">Paiement sécurisé</a><br/>
+    </div>
+    <div>
+        <p>A propos</p>
+        <a href="https://127.0.0.1:8000/CGV">CGV</a><br/>
+        <a href="https://127.0.0.1:8000/Mentions">Mentions légales</a><br/>
+        <a href="https://127.0.0.1:8000/DonneePers">Données personnelles</a><br/>
+    </div>
+</footer>
+</html>
+<!DOCTYPE html>
+
+<html lang="fr">
+<link rel="stylesheet" href=" {{  asset('/style/base.css') }}">
+<head>
+    <meta charset="UTF-8">
+    <link rel="icon" type="image/x-icon" href=" {{  asset('logobeigenoir.ico') }}" sizes="120x120" />
+    <title>{% block title %}LaBonneMiche{% endblock %}</title>
+    {# Run `composer require symfony/webpack-encore-bundle`
+           and uncomment the following Encore helpers to start using Symfony UX #}
+    {% block stylesheets %}
+        {#{{ encore_entry_link_tags('app') }}#}
+    {% endblock %}
+
+    {% block javascripts %}
+        {#{{ encore_entry_script_tags('app') }}#}
+    {% endblock %}
+</head>
+<header>
+    <p>
+        <button onclick="location.href='https://127.0.0.1:8000/produits'" type=button>Nos Produits </button>
+        <button onclick="location.href='https://127.0.0.1:8000/actualite'" type=button> Nos Actualités</button>
+        <img src="{{ asset('imgs/logobeigenoir.png') }}" onclick="location.href='https://127.0.0.1:8000'" alt="Logo LaBonneMiche" height="64" width="64"/>
+        <button onclick="location.href='https://127.0.0.1:8000/histoire'" type=button> Notre Histoire</button>
+        <button onclick="location.href='https://127.0.0.1:8000/forum'" type=button> Forum</button>
+        <button> Panier</button>
+        <button> Profil</button>
+    </p>
+</header>
+<body>
+{% block body %}{% endblock %}
+<p> NOTRES HISTOIRE </p>
+</body>
+<footer>
+    <div>
+        <p> L'Entreprise </p>
+        <a href="https://127.0.0.1:8000/Histoire">L'histoire</a><br/>
+        <a href="https://127.0.0.1:8000/Engagement">Notre engagement</a><br/>
+        <a href="https://127.0.0.1:8000/Franchise">Devenir franchisé</a><br/>
+    </div>
+    <div>
+        <p>Nos services</p>
+        <a href="https://127.0.0.1:8000/FAQ">FAQ</a><br/>
+        <a href="https://127.0.0.1:8000/Contact">Contactez nous</a><br/>
+        <a href="https://127.0.0.1:8000/PaySecure">Paiement sécurisé</a><br/>
+    </div>
+    <div>
+        <p>A propos</p>
+        <a href="https://127.0.0.1:8000/CGV">CGV</a><br/>
+        <a href="https://127.0.0.1:8000/Mentions">Mentions légales</a><br/>
+        <a href="https://127.0.0.1:8000/DonneePers">Données personnelles</a><br/>
+    </div>
+</footer>
+</html>

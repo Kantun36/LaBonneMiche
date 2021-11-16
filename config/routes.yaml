@@ -33,3 +33,7 @@ app_register:
 panier:
     path: /panier
     controller: App\Controller\HomeController::histoire
+
+dashboard:
+    path: /admin
+    controller: App\Controller\Admin\DashboardController::index
