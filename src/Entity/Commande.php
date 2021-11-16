@@ -3,6 +3,8 @@
 namespace App\Entity;
 
 use App\Repository\CommandeRepository;
+use Doctrine\Common\Collections\ArrayCollection;
+use Doctrine\Common\Collections\Collection;
 use Doctrine\ORM\Mapping as ORM;
 
 /**
@@ -31,6 +33,16 @@ class Commande
      * @ORM\Column(type="boolean")
      */
     private $Pret;
+
+    /**
+     * @ORM\ManyToMany(targetEntity=Produit::class, inversedBy="commandes")
+     */
+    private $Produits;
+
+    public function __construct()
+    {
+        $this->Produits = new ArrayCollection();
+    }
 
     public function getId(): ?int
     {
@@ -69,6 +81,30 @@ class Commande
     public function setPret(bool $Pret): self
     {
         $this->Pret = $Pret;
+
+        return $this;
+    }
+
+    /**
+     * @return Collection|Produit[]
+     */
+    public function getProduits(): Collection
+    {
+        return $this->Produits;
+    }
+
+    public function addProduit(Produit $produit): self
+    {
+        if (!$this->Produits->contains($produit)) {
+            $this->Produits[] = $produit;
+        }
+
+        return $this;
+    }
+
+    public function removeProduit(Produit $produit): self
+    {
+        $this->Produits->removeElement($produit);
 
         return $this;
     }
