@@ -1,0 +1,39 @@
+{% extends 'base.html.twig' %}
+
+{% block title %}Paragraphe index{% endblock %}
+
+{% block body %}
+    <h1>Paragraphe index</h1>
+
+    <table class="table">
+        <thead>
+            <tr>
+                <th>Id</th>
+                <th>NumeroParagraphe</th>
+                <th>TitreParagraphe</th>
+                <th>ContenuParagraphe</th>
+                <th>actions</th>
+            </tr>
+        </thead>
+        <tbody>
+        {% for paragraphe in paragraphes %}
+            <tr>
+                <td>{{ paragraphe.id }}</td>
+                <td>{{ paragraphe.numeroParagraphe }}</td>
+                <td>{{ paragraphe.titreParagraphe }}</td>
+                <td>{{ paragraphe.contenuParagraphe }}</td>
+                <td>
+                    <a href="{{ path('paragraphe_show', {'id': paragraphe.id}) }}">show</a>
+                    <a href="{{ path('paragraphe_edit', {'id': paragraphe.id}) }}">edit</a>
+                </td>
+            </tr>
+        {% else %}
+            <tr>
+                <td colspan="5">no records found</td>
+            </tr>
+        {% endfor %}
+        </tbody>
+    </table>
+
+    <a href="{{ path('paragraphe_new') }}">Create new</a>
+{% endblock %}
