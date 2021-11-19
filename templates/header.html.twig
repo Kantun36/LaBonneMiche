@@ -2,7 +2,7 @@
 <html lang="fr">
 
 <header>
-
+<div id="header">
     <nav class="navbar navbar-expand-lg navbar-light " >
         <div class="container-fluid" >
             <button class="navbar-toggler mb-3" type="button" data-bs-toggle="collapse" data-bs-target="#navbarNavDropdown" aria-controls="navbarNavDropdown" aria-expanded="false" aria-label="Toggle navigation">
@@ -56,31 +56,38 @@
                             </li>
                         </ul>
                     </li>
-                    <li class="nav-item">
-                        <a class="nav-link " id="buttonHeader" id="a" href="#" onclick="location.href='https://127.0.0.1:8000/actualite'">
+                    <li class="nav-item ">
+
+                        <a id="buttonHeader1"  id="a" class="nav-link " href="#" onclick="location.href='https://127.0.0.1:8000/actualite'" role="button">
                             Nos Actualités
                             <span id="span"></span>
                             <span id="span"></span>
                             <span id="span"></span></a>
+
                     </li>
                     <li class="nav-item">
-                        <a class="nav-link"id="buttonHeader" id="a"  href="#" onclick="location.href='https://127.0.0.1:8000/histoire'">
+
+                        <a id="buttonHeader2" class="nav-link" id="a"  href="#" onclick="location.href='https://127.0.0.1:8000/histoire'">
                             Notre Histoire
                             <span id="span"></span>
                             <span id="span"></span>
                             <span id="span"></span></a>
+
                     </li>
                     <li class="nav-item">
-                        <a class="nav-link" id="buttonHeader" id="a" href="#" onclick="location.href='https://127.0.0.1:8000/forum'">
+
+                        <a id="buttonHeader3" class="nav-link"  id="a" href="#" onclick="location.href='https://127.0.0.1:8000/forum'">
                             Forum
                             <span id="span"></span>
                             <span id="span"></span>
                             <span id="span"></span></a>
+
                     </li>
                 </ul>
             </div>
+            <div id="aaa">
             <div class="align-content-end ">
-                <a id="a" href="#"  onclick="location.href='https://127.0.0.1:8000/connection'">
+                <a id="aa" href="#"  onclick="location.href='https://127.0.0.1:8000/connection'">
                     <svg xmlns="http://www.w3.org/2000/svg" width="40"  fill="black" class="bi bi-person-circle" viewBox="0 0 16 16">
                         <path d="M11 6a3 3 0 1 1-6 0 3 3 0 0 1 6 0z"/>
                         <path fill-rule="evenodd" d="M0 8a8 8 0 1 1 16 0A8 8 0 0 1 0 8zm8-7a7 7 0 0 0-5.468 11.37C3.242 11.226 4.805 10 8 10s4.757 1.225 5.468 2.37A7 7 0 0 0 8 1z"/>
@@ -89,7 +96,8 @@
             </div>
 
             <div class="align-content-end ">
-                <a href="#" onclick="location.href='https://127.0.0.1:8000/panier'">
+
+                <a id="aa" href="#" onclick="location.href='https://127.0.0.1:8000/panier'">
                     <svg xmlns="http://www.w3.org/2000/svg" width="40"  fill="black" class="bi bi-cart2" viewBox="0 0 16 16">
                         <path d="M0 2.5A.5.5 0 0 1 .5 2H2a.5.5 0 0 1 .485.379L2.89 4H14.5a.5.5 0 0 1 .485.621l-1.5 6A.5.5 0 0 1 13 11H4a.5.5 0 0 1-.485-.379L1.61 3H.5a.5.5 0 0 1-.5-.5zM3.14 5l1.25 5h8.22l1.25-5H3.14zM5 13a1 1 0 1 0 0 2 1 1 0 0 0 0-2zm-2 1a2 2 0 1 1 4 0 2 2 0 0 1-4 0zm9-1a1 1 0 1 0 0 2 1 1 0 0 0 0-2zm-2 1a2 2 0 1 1 4 0 2 2 0 0 1-4 0z"/>
                     </svg>
@@ -97,22 +105,12 @@
 
 
             </div>
+            </div>
 
 
         </div>
     </nav>
-    <div class="banner-image w-100 vh-100 d-flex justify-content-center align-items-center">
-        <div class="container">
-            <div class="row mt-5 pt-5">
-                <div class="content text-center mt-5 pt-4">
-                    <h1 class="text-white mt-5 pt-5">
-                        Bienvenue.<br>
-                        Bonne miche sah.</h1>
-                </div>
-            </div>
-
-        </div>
-    </div>
+</div>
 
     <script>
         /* When the user clicks on the button,
@@ -133,7 +131,37 @@
                 }
             }
         }
+
+
+
+        window.onscroll = function() {scrollFunction()};
+
+        function scrollFunction() {
+            if (document.body.scrollTop > 500 || document.documentElement.scrollTop > 500) {
+                document.getElementById("header").style.background = "rgba(227,179,100)";
+
+
+                document.getElementById("buttonHeader").style.color = "black";
+                document.getElementById("buttonHeader1").style.color = "black";
+                document.getElementById("buttonHeader2").style.color = "black";
+                document.getElementById("buttonHeader3").style.color = "black";
+
+
+            } else {
+
+                document.getElementById("header").style.background = "rgba(0,0,0,0.25)";
+                document.getElementById("buttonHeader").style.color = "#e3b364";
+                document.getElementById("buttonHeader1").style.color = "#e3b364";
+                document.getElementById("buttonHeader2").style.color = "#e3b364";
+                document.getElementById("buttonHeader3").style.color = "#e3b364";
+
+
+            }
+        }
+
+
     </script>
+
 </header>
 
 </html>
