@@ -39,6 +39,11 @@ class Image
      */
     private $Paragraphes;
 
+    /**
+     * @ORM\Column(type="string", length=255)
+     */
+    private $NomImage;
+
     public function getId(): ?int
     {
         return $this->id;
@@ -88,6 +93,18 @@ class Image
     public function setParagraphes(?Paragraphe $Paragraphes): self
     {
         $this->Paragraphes = $Paragraphes;
+
+        return $this;
+    }
+
+    public function getNomImage(): ?string
+    {
+        return $this->NomImage;
+    }
+
+    public function setNomImage(string $NomImage): self
+    {
+        $this->NomImage = $NomImage;
 
         return $this;
     }

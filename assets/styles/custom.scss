@@ -14,6 +14,8 @@ footer{
 
 
 
+
+
 #buttonHeader {
 
   background-color: #e3b364;
@@ -29,7 +31,7 @@ footer{
   }
 }
 
-
+/**
 a {
   background-color: #e3b364;
   display: block;
@@ -107,7 +109,7 @@ a {
 }
 
 
-
+**/
 
 
 
@@ -418,4 +420,30 @@ a {
   .main-timeline .description{
     text-align:center
   }
+}
+
+#btnregisterlogin {
+  width: 100%;
+  border-style: none;
+}
+
+.gradient-custom-3 {
+  /* fallback for old browsers */
+  background: #e3b364;
+
+  /* Chrome 10-25, Safari 5.1-6 */
+  background: -webkit-linear-gradient(to right top, #e3b364, #e3b364, #e3b364, #e3b364, #e3b364);
+
+  /* W3C, IE 10+/ Edge, Firefox 16+, Chrome 26+, Opera 12+, Safari 7+ */
+  background: linear-gradient(to right top, #e3b364, #e3b364, #e3b364, #e3b364, #e3b364);
+}
+.gradient-custom-4 {
+  /* fallback for old browsers */
+  background: #e3b364;
+
+  /* Chrome 10-25, Safari 5.1-6 */
+  background: -webkit-linear-gradient(to right top, #e3b364, #e3b364, #e3b364, #e3b364, #e3b364);
+
+  /* W3C, IE 10+/ Edge, Firefox 16+, Chrome 26+, Opera 12+, Safari 7+ */
+  background: linear-gradient(to right top, #e3b364, #e3b364, #e3b364, #e3b364, #e3b364);
 }
