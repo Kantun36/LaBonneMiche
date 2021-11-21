@@ -1,6 +1,25 @@
 
+
 .navbar{
-  background: #e3b364;
+  background: transparent;
+  
+  position : fixed;
+}
+
+#ButtonMini{
+  background : #e3b364;
+}
+#header{
+  position : fixed;
+  padding-right : 100%;
+
+ background : #e3b364;
+}
+
+#header1{
+  position : fixed;
+  padding-right : 100%;
+
 }
 
 #dropdown-menu{
@@ -13,12 +32,10 @@ footer{
 
 
 
-
-
-
 #buttonHeader {
 
   background-color: #e3b364;
+  color : black;
   &:hover {
     color: black;
 
@@ -31,9 +48,114 @@ footer{
   }
 }
 
+<<<<<<< HEAD
 /**
 a {
+=======
+
+#buttonHeader4 {
+
+  background-color: transparent;
+  color : #e3b364;
+  &:hover {
+    color: #e3b364;
+
+    transition: transform .5s;
+    span {
+      background: #e3b364;
+
+      transition: transform .5s;
+    }
+  }
+}
+
+#buttonHeader1 {
+
+  background-color: transparent;
+  color : #e3b364;
+  &:hover {
+    color: #e3b364;
+
+    transition: transform .5s;
+    span {
+      background: #e3b364;
+
+      transition: transform .5s;
+    }
+  }
+}
+
+
+#buttonHeader2 {
+  background-color: transparent;
+  color : #e3b364;
+  &:hover {
+    color: #e3b364;
+
+    transition: transform .5s;
+    span {
+      background: #e3b364;
+
+      transition: transform .5s;
+    }
+  }
+}
+#buttonHeader3 {
+
+  background-color: transparent;
+  color : #e3b364;
+  &:hover {
+    color: #e3b364;
+
+    transition: transform .5s;
+    span {
+      background: #e3b364;
+
+      transition: transform .5s;
+    }
+  }
+}
+
+h1{
+  font-family: Brand;
+  color: white;
+  font-style: italic;
+  font-weight: bold;
+  text-shadow : black 1px 0 15px;
+
+
+
+}
+#aa{
+>>>>>>> featuress
   background-color: #e3b364;
+  border-radius: 25%;
+  opacity : 80%;
+  display: block;
+  position: relative;
+  width: 100%;
+  height: 100%;
+  line-height: 100%;
+  font-size: 130%;
+  text-align: center;
+  text-decoration: none;
+  margin: 0 10px;
+  transition: .5s;
+  font-family: Brand;
+  padding-top : 10%;
+  padding-bottom: 10%;
+
+}
+
+#aa:hover{
+  opacity : 100%;
+}
+#buttonLog{
+  padding-left : 30%;
+  padding-right : 10px;
+}
+a {
+  background-color: transparent;
   display: block;
   position: relative;
   width: 100%;
