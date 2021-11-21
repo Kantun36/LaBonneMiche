@@ -5,9 +5,21 @@
   
   position : fixed;
 }
+
+#ButtonMini{
+  background : #e3b364;
+}
 #header{
   position : fixed;
   padding-right : 100%;
+
+ background : #e3b364;
+}
+
+#header1{
+  position : fixed;
+  padding-right : 100%;
+
 }
 
 #dropdown-menu{
@@ -20,10 +32,24 @@ footer{
 
 
 
-
-
-
 #buttonHeader {
+
+  background-color: #e3b364;
+  color : black;
+  &:hover {
+    color: black;
+
+    transition: transform .5s;
+    span {
+      background: black;
+
+      transition: transform .5s;
+    }
+  }
+}
+
+
+#buttonHeader4 {
 
   background-color: transparent;
   color : #e3b364;
@@ -54,6 +80,8 @@ footer{
     }
   }
 }
+
+
 #buttonHeader2 {
   background-color: transparent;
   color : #e3b364;
@@ -106,20 +134,20 @@ h1{
   font-size: 130%;
   text-align: center;
   text-decoration: none;
-  color: #404040;
   margin: 0 10px;
   transition: .5s;
   font-family: Brand;
+  padding-top : 10%;
+  padding-bottom: 10%;
+
 }
 
 #aa:hover{
   opacity : 100%;
 }
-
-#aaa{
-  padding-left: 30%;
-  display: block;
-  position: relative;
+#buttonLog{
+  padding-left : 30%;
+  padding-right : 10px;
 }
 a {
   background-color: transparent;
@@ -189,10 +217,10 @@ a {
       }
     }
     &:nth-child(3) {
-      color: #e3b364;
+      color: black;
     }
     &:nth-child(4) {
-      color: #e3b364;
+      color: black;
     }
   }
 }
