@@ -1,25 +1,20 @@
 
 
 .navbar{
-
-
   position : fixed;
 }
 
 #ButtonMini{
   background : #e3b364;
 }
-#header{
-
+#header {
   padding-right : 100%;
-
   background : #e3b364;
 }
 
 #header1{
   position : fixed;
   padding-right : 100%;
-
 }
 
 #dropdown-menu{
@@ -136,16 +131,21 @@ footer{
   font-family: Brand;
   padding-top : 10%;
   padding-bottom: 10%;
-
 }
 
 #aa:hover{
   opacity : 100%;
 }
+
+.alignerdroite {
+  padding-right:250px;
+}
+
 #buttonLog{
   padding-left : 30%;
   padding-right : 10px;
 }
+
 .ac {
   background-color: transparent;
   display: block;

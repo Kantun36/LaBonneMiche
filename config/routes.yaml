@@ -32,7 +32,11 @@ app_register:
 
 panier:
     path: /panier
-    controller: App\Controller\HomeController::histoire
+    controller: App\Controller\HomeController::panier
+
+espaceperso:
+    path: /espaceperso
+    controller: App\Controller\EspacepersoController::index
 
 dashboard:
     path: /admin
