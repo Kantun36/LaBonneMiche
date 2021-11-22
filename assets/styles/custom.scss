@@ -1,7 +1,7 @@
 
 
 .navbar{
-  background: transparent;
+
 
   position : fixed;
 }
@@ -10,7 +10,7 @@
   background : #e3b364;
 }
 #header{
-  position : fixed;
+
   padding-right : 100%;
 
   background : #e3b364;
@@ -112,15 +112,12 @@ footer{
   }
 }
 
-h1{
+#citation{
   font-family: Brand;
   color: white;
   font-style: italic;
   font-weight: bold;
   text-shadow : black 1px 0 15px;
-
-
-
 }
 #aa{
   background-color: #e3b364;
@@ -149,7 +146,7 @@ h1{
   padding-left : 30%;
   padding-right : 10px;
 }
-a {
+.ac {
   background-color: transparent;
   display: block;
   position: relative;
@@ -163,6 +160,7 @@ a {
   margin: 0 30px;
   transition: .5s;
   font-family: Brand;
+  font-weight: bold;
   span {
     position: absolute;
     transition: transform .5s;
@@ -563,3 +561,6 @@ a {
   /* W3C, IE 10+/ Edge, Firefox 16+, Chrome 26+, Opera 12+, Safari 7+ */
   background: linear-gradient(to right top, #e3b364, #e3b364, #e3b364, #e3b364, #e3b364);
 }
+
+// Page histoire
+
