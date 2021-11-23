@@ -69,9 +69,9 @@
                                 <span id="span"></span></a>
 
                         </li>
-                        <li class="nav-item">
+                        <li class="nav-item" id="HistoirePadding">
 
-                            <a id="buttonHeader" class="nav-link ac" href="#" onclick="location.href='/histoire'">
+                            <a id="buttonHeader2" class="nav-link ac" href="#" onclick="location.href='/histoire'">
                                 Notre Histoire
                                 <span id="span"></span>
                                 <span id="span"></span>
@@ -90,7 +90,19 @@
                     </ul>
                 </div>
 
-                <div class="align-content-end " id="buttonLog">
+                <div class="Bonjour">
+
+                    {%  if app.user %}
+
+                        <p class="BonjourHome"> Bonjour {{ app.user.PrenomUser }}</p>
+
+                    {% else %}
+                        <p class="BonjourHome">Connectez-vous</p>
+                    {% endif %}
+
+                </div>
+
+                <div class="align-content-end buttonLog" >
 
                     {% if app.user %}
                         <a  id="aa" href="#"  onclick="location.href='/espaceperso'">
@@ -128,17 +140,7 @@
 
                 </div>
 
-                <div class="align-content-end ">
 
-                    {%  if app.user %}
-
-                        <p id="aa"> Bonjour {{ app.user.PrenomUser }}</p>
-
-                    {% else %}
-                        <p id="aa">Connectez-vous</p>
-                    {% endif %}
-
-                </div>
 
 
 

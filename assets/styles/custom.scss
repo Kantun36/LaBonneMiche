@@ -1,4 +1,8 @@
-
+@font-face {
+  font-family: "Brand";
+  src: url("/public/Brand.woff") format("woff"),
+  url("/public/Brand.ttf") format("truetype");
+}
 
 .navbar{
   position : fixed;
@@ -9,7 +13,11 @@
 }
 #header {
   padding-right : 100%;
-  background : #e3b364;
+  background-image: url("/public/img/headerimg.jpg");
+  background-size: cover;
+  background-repeat: no-repeat;
+  padding-bottom : 2%;
+  padding-top: 2%
 }
 
 #header1{
@@ -23,21 +31,42 @@
 }
 
 footer{
+  background: black;
+}
+
+h5{
+  color: #e3b364;
+}
+
+.footurl{
+  color: gray;
+}
+
+.footerlogo{
   background: #e3b364;
+  border-radius: 25%;
+}
+
+.glyphicon::before {
+  color: #e3b364;
+}
+
+.b-icon{
+  color: #e3b364 !important;
 }
 
 
 
 #buttonHeader {
 
-  background-color: #e3b364;
-  color : black;
+  background-color: transparent;
+  color : #e3b364;
   &:hover {
-    color: black;
+    color: #e3b364;
 
     transition: transform .5s;
     span {
-      background: black;
+      background: #e3b364;
 
       transition: transform .5s;
     }
@@ -81,6 +110,9 @@ footer{
 #buttonHeader2 {
   background-color: transparent;
   color : #e3b364;
+  text-align : center;
+  width : 130%;
+
   &:hover {
     color: #e3b364;
 
@@ -91,6 +123,10 @@ footer{
       transition: transform .5s;
     }
   }
+}
+
+#HistoirePadding{
+  padding-right: 5%;
 }
 #buttonHeader3 {
 
@@ -127,11 +163,10 @@ footer{
   font-size: 130%;
   text-align: center;
   text-decoration: none;
-  margin: 0 10px;
+  margin: 0 ;
   transition: .5s;
   font-family: Brand;
-  padding-top : 10%;
-  padding-bottom: 10%;
+
 }
 
 #aa:hover{
@@ -139,13 +174,18 @@ footer{
 }
 
 .alignerdroite {
-  padding-right:250px;
+  padding-right:200px;
 }
 
-#buttonLog{
-  padding-left : 30%;
-  padding-right : 10px;
+.Bonjour{
+  padding-left : 20%;
+  padding-right : 8%;
 }
+.buttonLog{
+ padding-right: 10px;
+}
+
+
 
 .ac {
   background-color: transparent;
@@ -225,7 +265,13 @@ footer{
 }
 
 
-
+.BonjourHome{
+  background : transparent;
+  color : #e3b364;
+  font-weight : bold;
+  text-align : center;
+  width : 200%;
+}
 
 
 
