@@ -1,3 +1,36 @@
+//Page d'un produit :
+.card {
+  margin-bottom: 30px;
+}
+.card {
+  position: relative;
+  display: flex;
+  flex-direction: column;
+  min-width: 0;
+  word-wrap: break-word;
+  background-color: #fff;
+  background-clip: border-box;
+  border: 0 solid transparent;
+  border-radius: 0;
+}
+.card .card-subtitle {
+  font-weight: 300;
+  margin-bottom: 10px;
+  color: #8898aa;
+}
+.table-product.table-striped tbody tr:nth-of-type(odd) {
+  background-color: #f3f8fa!important
+}
+.table-product td{
+  border-top: 0px solid #dee2e6 !important;
+  color: #728299!important;
+}
+
+
+
+
+
+
 
 .navbar{
   background: #e3b364;
@@ -32,83 +65,12 @@ footer{
 }
 
 
-a {
-  background-color: #e3b364;
-  display: block;
-  position: relative;
-  width: 100%;
-  height: 100%;
-  line-height: 100%;
-  font-size: 130%;
-  text-align: center;
-  text-decoration: none;
-  color: #404040;
-  margin: 0 30px;
-  transition: .5s;
-  font-family: Brand;
-  span {
-    position: absolute;
-    transition: transform .5s;
 
-    &:nth-child(3) {
-      width: 80%;
-      margin-left : 10%;
-      height: 3%;
-      background: #404040;
-      bottom: 0;
-      left: 0;
-      transform-origin: right;
-    }
-    &:nth-child(2) {
-      top: 0;
-      top: 0;
-      left: 0;
-      left: 0;
-      transform: scale(0);
-      transform: scale(0);
-      transform-origin: right;
-      transform-origin: right;
-    }
-    &:nth-child(4) {
-      top: 0;
-      right: 0;
-      transform: scale(0);
-      transform-origin: right;
-    }
-  }
-  &:hover {
-    span {
-      &:nth-child(1) {
-        transform: scaleX(0);
-        transform-origin: right;
-        transition: transform .5s;
-      }
-      &:nth-child(3) {
-        transform: scaleX(0);
-        transform-origin: right;
-        transition: transform .5s;
-      }
-      &:nth-child(2) {
-        transform: scale(1);
-        transform-origin: right;
-        transition: transform .5s;
-      }
-      &:nth-child(4) {
-        transform: scale(1);
-        transform-origin: right;
-        transition: transform .5s;
-      }
-    }
-    &:nth-child(3) {
-      color: black;
-    }
-    &:nth-child(4) {
-      color: black;
-    }
-  }
+
+
+#nombreProduit{
+  width: 10%;
 }
-
-
 
 
 
