@@ -72,6 +72,7 @@ h5{
   color : #e3b364;
   &:hover {
     color: #e3b364;
+    opacity: 100%;
 
     transition: transform .5s;
     span {
@@ -89,6 +90,7 @@ h5{
   color : #e3b364;
   &:hover {
     color: #e3b364;
+    opacity: 100%;
 
     transition: transform .5s;
     span {
@@ -105,6 +107,7 @@ h5{
   color : #e3b364;
   &:hover {
     color: #e3b364;
+    opacity: 100%;
 
     transition: transform .5s;
     span {
@@ -124,6 +127,7 @@ h5{
 
   &:hover {
     color: #e3b364;
+    opacity: 100%;
 
     transition: transform .5s;
     span {
@@ -143,6 +147,7 @@ h5{
   color : #e3b364;
   &:hover {
     color: #e3b364;
+    opacity: 100%;
 
     transition: transform .5s;
     span {
@@ -194,6 +199,13 @@ h5{
   padding-right: 10px;
 }
 
+.hoverbtnpl {
+  opacity: 80%;
+  &:hover {
+    color: #e3b364;
+    opacity: 100%;
+  }
+}
 
 
 .ac {
