@@ -14,9 +14,9 @@ histoire:
     path: /histoire
     controller : App\Controller\HomeController::histoire
 
-forum:
-    path: /forum
-    controller : App\Controller\HomeController::forum
+contact:
+    path: /contact/new
+    controller : App\Controller\HomeController::contact
 
 app_login:
     path: /login

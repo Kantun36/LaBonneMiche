@@ -28,37 +28,37 @@
         }
     </style>
     <div class="bodyhome">
-    <div class="banner-image w-100 vh-100 d-flex justify-content-center align-items-center">
-        <div class="container">
-            <div class="row mt-5 pt-5">
-                <div class="content text-center mt-5 pt-4">
-                    <div id="carouselExampleSlidesOnly" class="carousel slide carousel-fade" data-ride="carousel">
-                        <div class="carousel-inner">
-                            <div class="carousel-item active">
-                                <h1 id="citation" class="d-block w-100">“La moitié d'une miche <br>vaut mieux que pas de pain.”</h1>
+        <div class="banner-image w-100 vh-100 d-flex justify-content-center align-items-center">
+            <div class="container">
+                <div class="row mt-5 pt-5">
+                    <div class="content text-center mt-5 pt-4">
+                        <div id="carouselExampleSlidesOnly" class="carousel slide carousel-fade" data-ride="carousel">
+                            <div class="carousel-inner">
+                                <div class="carousel-item active">
+                                    <h1 id="citation" class="d-block w-100">“La moitié d'une miche <br>vaut mieux que pas de pain.”</h1>
+                                </div>
+                                <div class="carousel-item ">
+                                    <h1 id="citation" class="d-block w-100" >"Du pain de mon compère, <br>grosse miche à mon filleul."</h1>
+                                </div>
+                                <div class="carousel-item ">
+                                    <h1 id="citation" class="d-block w-100">"A la porte où l'on donne les miches,<br>
+                                        Les gueux y vont."</h1>
+                                </div>
                             </div>
-                            <div class="carousel-item ">
-                                <h1 id="citation" class="d-block w-100" >"Du pain de mon compère, <br>grosse miche à mon filleul."</h1>
-                            </div>
-                            <div class="carousel-item ">
-                                <h1 id="citation" class="d-block w-100">"A la porte où l'on donne les miches,<br>
-                                    Les gueux y vont."</h1>
-                            </div>
+
                         </div>
 
                     </div>
-
                 </div>
             </div>
         </div>
-    </div>
 
 
 
-    <div id="titlephare">
-        <h1 id="tltphare">Découvrez nos produits phares ! </h1>
+        <div id="titlephare">
+            <h1 id="tltphare">Découvrez nos produits phares ! </h1>
 
-    </div>
+        </div>
 
         <div id="carouselExampleControls" class="carousel slide caroushome "   data-ride="carousel">
             <div class="carousel-inner">
@@ -126,9 +126,11 @@
 
 
             </a>
+
         </div>
-        <br>
+        <br><br><br><br><br>
     </div>
+
 
 
 
@@ -137,14 +139,18 @@
     <script src="https://code.jquery.com/jquery-3.3.1.slim.min.js"></script>
     <script src="https://cdnjs.cloudflare.com/ajax/libs/popper.js/1.14.3/umd/popper.min.js"></script>
     <script src="https://stackpath.bootstrapcdn.com/bootstrap/4.1.1/js/bootstrap.min.js"></script>
-    <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.7/css/bootstrap.min.css">
+    <!--  Flèche carroussel ATTENTION commenté car bug avec le HeaderHome si activé
+       <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.7/css/bootstrap.min.css"> -->
     <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.2.1/jquery.min.js"></script>
     <script src="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.7/js/bootstrap.min.js"></script>
+
 {% endblock %}
 
- {{ include('footer.html.twig') }}
+{{ include('footer.html.twig') }}
 
 </html>
+
+
 
 
 
