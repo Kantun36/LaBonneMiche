@@ -55,6 +55,13 @@ class RegistrationController extends AbstractController
             // do anything else you need here, like send an email
             */
             return $this->redirectToRoute('app_login');
+        }else if ($request->isMethod('POST') && $form->handleRequest($request)->isValid()) {
+
+
+            $message = 'Voici un message en javascript écrit par php';
+
+            echo '<script type="text/javascript">window.alert("' . $message . '");</script>';
+
         }
 
         return $this->render('registration/register.html.twig', [

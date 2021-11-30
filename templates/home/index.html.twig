@@ -20,53 +20,137 @@
 
 
 {% block body %}
+
     <style>
         .banner-image {
             background-image: url('/img/bgimage.jpg');
             background-size: cover;
         }
     </style>
-    <div class="banner-image w-100 vh-100 d-flex justify-content-center align-items-center">
-        <div class="container">
-            <div class="row mt-5 pt-5">
-                <div class="content text-center mt-5 pt-4">
-                    <div id="carouselExampleSlidesOnly" class="carousel slide carousel-fade" data-ride="carousel">
-                        <div class="carousel-inner">
-                            <div class="carousel-item active">
-                                <h1 id="citation" class="d-block w-100">“La moitié d'une miche <br>vaut mieux que pas de pain.”</h1>
+    <div class="bodyhome">
+        <div class="banner-image w-100 vh-100 d-flex justify-content-center align-items-center">
+            <div class="container">
+                <div class="row mt-5 pt-5">
+                    <div class="content text-center mt-5 pt-4">
+                        <div id="carouselExampleSlidesOnly" class="carousel slide carousel-fade" data-ride="carousel">
+                            <div class="carousel-inner">
+                                <div class="carousel-item active">
+                                    <h1 id="citation" class="d-block w-100">“La moitié d'une miche <br>vaut mieux que pas de pain.”</h1>
+                                </div>
+                                <div class="carousel-item ">
+                                    <h1 id="citation" class="d-block w-100" >"Du pain de mon compère, <br>grosse miche à mon filleul."</h1>
+                                </div>
+                                <div class="carousel-item ">
+                                    <h1 id="citation" class="d-block w-100">"A la porte où l'on donne les miches,<br>
+                                        Les gueux y vont."</h1>
+                                </div>
                             </div>
-                            <div class="carousel-item ">
-                                <h1 id="citation" class="d-block w-100" >"Du pain de mon compère, <br>grosse miche à mon filleul."</h1>
-                            </div>
-                            <div class="carousel-item ">
-                                <h1 id="citation" class="d-block w-100">"A la porte où l'on donne les miches,<br>
-                                    Les gueux y vont."</h1>
-                            </div>
+
                         </div>
 
                     </div>
-
                 </div>
             </div>
         </div>
+
+
+
+        <div id="titlephare">
+            <h1 id="tltphare">Découvrez nos produits phares ! </h1>
+
+        </div>
+
+        <div id="carouselExampleControls" class="carousel slide caroushome "   data-ride="carousel">
+            <div class="carousel-inner">
+                <div class="carousel-item active carousitem">
+                    <div class="container c-phare">
+                        <div class="row ">
+                            <div class="col-6 carousfond">
+                                <div id="carousimage ">
+                                    <img class="carousimg " src="/img/baguettetradition.jpg" alt="First slide">
+                                </div>
+                            </div>
+                            <div class="col-6 carousfond">
+                                <div class="caroustext ">
+                                    <p class="caroustxt">Découvrez notre baguette tradition,<br> préparée avec amour par nos meilleurs boulanger </p>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+
+
+
+                </div>
+                <div class="carousel-item carousitem">
+                    <div class="container c-phare">
+                        <div class="row ">
+                            <div class="col-6 carousfond">
+                                <div class="caroustext ">
+                                    <p class="caroustxt"> Une petite faim ? Notre fameux sandwich poulet crudités vous attends !</p>
+                                </div>
+                            </div>
+                            <div class="col-6 carousfond">
+                                <div id="carousimage ">
+                                    <img class="carousimg" src="/img/pouletcrudité.jpg" alt="First slide">
+                                </div>
+
+                            </div>
+                        </div>
+                    </div>
+                </div>
+
+                <div class="carousel-item carousitem">
+                    <div class="container c-phare">
+                        <div class="row ">
+                            <div class="col-6 carousfond">
+                                <div id="carousimage ">
+                                    <img class="carousimg" src="/img/millefeuille.jpg" alt="First slide">
+                                </div>
+                            </div>
+                            <div class="col-6 carousfond">
+                                <div class="caroustext ">
+                                    <p class="caroustxt">Vous êtes gourmand ? <br>
+                                        Pas de soucis ! <br>
+                                        Découvrez notre mille feuille. </p>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+            </div>
+            <a class="carousel-control-prev arrow1" href="#carouselExampleControls" role="button" data-bs-slide="prev">
+                <span class="glyphicon glyphiconCarous glyphicon-chevron-left arrow" aria-hidden="true"></span>
+            </a>
+            <a class="carousel-control-next arrow2 " href="#carouselExampleControls" role="button" data-bs-slide="next">
+                <span class="glyphicon glyphiconCarous glyphicon-chevron-right arrow arrow fa-3x" aria-hidden="true"></span>
+
+
+            </a>
+
+        </div>
+        <br><br><br><br><br>
     </div>
 
-    <p> Test
 
 
-        TEST<br>TEST<br>TEST<br>TEST<br>TEST<br>TEST<br>TEST<br>TEST<br>TEST<br>TEST<br>TEST<br>TEST<br>TEST<br>
-        TEST<br>TEST<br>TEST<br>TEST<br>TEST<br>TEST<br>TEST<br>TEST<br>TEST<br>TEST<br>TEST<br>TEST<br>TEST<br>
-    </p>
+
+
 
     <script src="https://code.jquery.com/jquery-3.3.1.slim.min.js"></script>
     <script src="https://cdnjs.cloudflare.com/ajax/libs/popper.js/1.14.3/umd/popper.min.js"></script>
     <script src="https://stackpath.bootstrapcdn.com/bootstrap/4.1.1/js/bootstrap.min.js"></script>
+    <!--  Flèche carroussel ATTENTION commenté car bug avec le HeaderHome si activé
+       <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.7/css/bootstrap.min.css"> -->
+    <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.2.1/jquery.min.js"></script>
+    <script src="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.7/js/bootstrap.min.js"></script>
 
 {% endblock %}
 
- {{ include('footer.html.twig') }}
+{{ include('footer.html.twig') }}
 
 </html>
+
+
 
 
 
