@@ -4,6 +4,14 @@
   url("/public/Brand.ttf") format("truetype");
 }*/
 
+body {
+  overflow-x: hidden;
+}
+.bodyhome{
+  background : rgba(224,205,165,0.627) ;
+
+}
+
 .navbar{
   position : fixed;
 }
@@ -24,6 +32,7 @@
   position : fixed;
   padding-right : 100%;
   background: rgba(0,0,0,0.25);
+  z-index: 1000;
 }
 
 #dropdown-menu{
@@ -263,7 +272,6 @@ h5{
     }
   }
 }
-
 
 .BonjourHome{
   background : transparent;
@@ -506,5 +514,88 @@ h5{
   position:absolute;
   width:0;
   height:0;
+}
+
+// Carroussel
+
+.carousitem{
+  position: relative;
+
+}
+
+
+.c-phare{
+  width: 60%;
+  margin-left: 20%;
+}
+#titlephare{
+  text-align : center;
+  width: 100%;
+  margin:5%;
+}
+
+#tltphare{
+  color: black;
+  font-weight: bold;
+
+
+}
+
+#carouselExampleControls{
+
+  padding-left : 10%;
+  padding-right: 10%;
+
+}
+
+.carousfond{
+
+}
+
+.caroushome{
+  width:100%;
+
+}
+
+.carousimg{
+  width: 400px;
+  height: auto;
+
+}
+
+.caroustext{
+  margin-top : 20%;
+  margin-right: 30%;
+  margin-left:15%;
+  text-align: center;
+  font-size : 200%;
+
+
+}
+
+.caroustxt{
+  color: black;
+
+}
+
+#carousimage{
+
+
+  position : relative;
+
+
+}
+
+.arrow{
+
+}
+
+.arrow1{
+  margin-left: 0%;
+  width: 30pt;
+}
+
+.arrow2{
+  margin-right: 0%;
 }
 

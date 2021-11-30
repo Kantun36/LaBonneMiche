@@ -16,35 +16,38 @@
     {% endfor %}
 
 
-    <section class="vh-100 bg-image">
-        <div class="mask d-flex align-items-center h-100 gradient-custom-3">
+    <section class="vh-100 bg-image" style="background-image: url({{ asset('img/lrbg2.jpg') }}); background-repeat: no-repeat;
+            background-size: cover;">
+        <div class="mask d-flex align-items-center h-100">
             <div class="container h-100">
                 <div class="row d-flex justify-content-center align-items-center h-100">
                     <div class="col-12 col-md-9 col-lg-7 col-xl-6">
-                        <div class="card" style="border-radius: 15px;">
+                        <div class="card" style="border-radius: 15px; opacity: 90%; background-color: white;">
                             <div class="card-body p-5">
                                 <h2 class="text-uppercase text-center mb-5">Créer un compte</h2>
 
+
                                 {{ form_start(registrationForm) }}
+
 
                                     <div class="form-outline mb-4">
                                         {{ form_widget(registrationForm.nom_user, {'attr': {'placeholder': 'Nom *',
-                                        'class': 'form-control form-control-lg'}}) }}
+                                        'class': 'form-control form-control-lg', 'required': 'true'}}) }}
                                     </div>
 
                                     <div class="form-outline mb-4">
                                         {{ form_widget(registrationForm.prenom_user, {'attr': {'placeholder': 'Prénom *',
-                                            'class': 'form-control form-control-lg'}}) }}
+                                            'class': 'form-control form-control-lg', 'required': 'true'}}) }}
                                     </div>
 
                                     <div class="form-outline mb-4">
                                         {{ form_widget(registrationForm.email, {'attr': {'placeholder': 'Email *',
-                                            'class': 'form-control form-control-lg'}}) }}
+                                            'class': 'form-control form-control-lg', 'required': 'true'}}) }}
                                     </div>
 
                                     <div class="form-outline mb-4">
                                         {{ form_widget(registrationForm.plainPassword, {'attr': {'placeholder': 'Mot de passe *',
-                                            'class': 'form-control form-control-lg'}}) }}
+                                            'class': 'form-control form-control-lg', 'required': 'true'}}) }}
                                     </div>
 
                                     <div class="form-outline mb-4">
@@ -53,7 +56,7 @@
                                     </div>
 
                                     <div class="form-check d-flex justify-content-center mb-5">
-                                        {{ form_widget(registrationForm.agreeTerms, {'attr': {'class': 'form-check-input me-2'}}) }}
+                                        {{ form_widget(registrationForm.agreeTerms, {'attr': {'class': 'form-check-input me-2', 'required': 'true'}}) }}
                                         <label class="form-check-label" for="form2Example3g">
                                             J'accepte les <a href="/cgu" class="text-body"><u>CGU</u></a>
                                         </label>
