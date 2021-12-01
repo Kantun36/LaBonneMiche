@@ -11,21 +11,27 @@
 {% endblock %}
 
 {% block body %}
+    <style>
+        .banner-image {
+            background-image: url('/img/bgimage.jpg');
+            background-size: cover;
+        }
+    </style>
 
     {% for flashError in app.flashes('verify_email_error') %}
         <div class="alert alert-danger" role="alert">{{ flashError }}</div>
     {% endfor %}
 
 
-    <section class="vh-100 bg-image" style="background-image: url({{ asset('img/bglogin.jpg') }}); background-repeat: no-repeat;
+    <section class="vh-100 bg-image " style="background-image: url({{ asset('img/bglogin.jpg') }}); background-repeat: no-repeat;
             background-size: cover;">
-        <div class="mask d-flex align-items-center h-100">
+        <div class="banner-image mask d-flex align-items-center h-100">
             <div class="container h-100">
                 <div class="row d-flex justify-content-center align-items-center h-100">
                     <div class="col-12 col-md-9 col-lg-7 col-xl-6">
-                        <div class="card" style="border-radius: 15px;">
-                            <div class="card-body p-5">
-                                <h2 class="text-uppercase text-center mb-5">Connectez-vous</h2>
+                        <div class="card" style="background:transparent; border-radius:10%;">
+                            <div class="card-body p-5 cardlogin">
+                                <h2 class="text-center mb-5 titlelogin">Connectez-vous</h2>
 
                                 <form method="post">
 
@@ -63,13 +69,13 @@
                                     #}
 
                                 <div class="d-flex justify-content-center">
-                                    <button id="btnregisterlogin" class="btn btn-success btn-block btn-lg gradient-custom-4 text-body" type="submit">
+                                    <button id="btnregisterlogin" class="btn btn-success btn-block btn-lg " type="submit">
                                         Se connecter
                                     </button>
                                 </div>
 
 
-                                <p class="text-center text-muted mt-5 mb-0">Pas encore de compte ? <a href="/register" class="fw-bold text-body"><u>Inscrivez-vous</u></a></p>
+                                <p class="text-center text-muted mt-5 mb-0">Pas encore de compte ? <a href="/register" class="fw-bold text-body "><u class="linkregister">Inscrivez-vous</u></a></p>
 
                                 </form>
                             </div>
