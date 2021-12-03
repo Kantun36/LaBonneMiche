@@ -293,14 +293,33 @@ h5{
   width : 200%;
 }
 
+.titlelogin{
+  color : #e3b364;
+}
+
+.cardlogin{
+  background: rgba(0,0,0,0.9);
+  border-radius: 10%;
+}
+
+.linkregister{
+  color : #e3b364;
+}
+
 #btnregisterlogin {
   width: 100%;
   border-style: none;
+  color: black;
+  background: rgba(227,179,100,0.7);
+}
+
+#btnregisterlogin:hover{
+  background: rgba(227,179,100,1);
 }
 
 .gradient-custom-3 {
   /* fallback for old browsers */
-  background: #e3b364;
+  background: rgba(227,179,100,0.7);
 
   /* Chrome 10-25, Safari 5.1-6 */
   background: -webkit-linear-gradient(to right top, #e3b364, #e3b364, #e3b364, #e3b364, #e3b364);
@@ -361,7 +380,7 @@ h5{
   float: left;
   border: 1px solid #d4d4d4;
   /*border-radius: 2px;*/
-  /*padding: 20px;*/
+  padding: 2px;
   position: relative;
   -webkit-box-shadow: 0 1px 6px rgba(0, 0, 0, 0.175);
   box-shadow: 0 1px 6px rgba(0, 0, 0, 0.175);
@@ -598,10 +617,6 @@ h5{
 
 }
 
-.arrow{
-
-}
-
 .arrow1{
   margin-left: 0%;
   width: 30pt;
@@ -610,4 +625,54 @@ h5{
 .arrow2{
   margin-right: 0%;
 }
+
+// Contact
+
+.text-black {
+  color: #e3b364;
+}
+.content {
+  padding: 7rem 0;
+}
+
+.heading {
+  font-size: 2.5rem;
+  font-weight: 900;
+}
+.form-control {
+  border: none;
+  border-bottom: 1px solid #ccc;
+  padding-left: 0;
+  padding-right: 0;
+  border-radius: 0;
+  background: none;
+  &:active, &:focus {
+    outline: none;
+    box-shadow: none;
+    border-color: #000;
+  }
+}
+.col-form-label {
+  color: #e3b364;
+  font-size: 13px;
+}
+.btn, .form-control, .custom-select {
+  height: 45px;
+  border-radius: 0;
+}
+.custom-select {
+  border: none;
+  border-bottom: 1px solid #e3b364;
+  padding-left: 0;
+  padding-right: 0;
+  border-radius: 0;
+  &:active, &:focus {
+    outline: none;
+    box-shadow: none;
+    border-color: #000;
+  }
+}
+
+
+
 

@@ -36,4 +36,10 @@ class HomeController extends AbstractController
         return $this-> render('contact/new.html.twig' , ['controller_name' => 'HomeController',
         ]);
     }
+
+    public function cgu(): Response
+    {
+        return $this-> render('cgu/index.html.twig' , ['controller_name' => 'HomeController',
+        ]);
+    }
 }

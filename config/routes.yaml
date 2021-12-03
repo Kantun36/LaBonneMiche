@@ -41,3 +41,7 @@ espaceperso:
 dashboard:
     path: /admin
     controller: App\Controller\Admin\DashboardController::index
+
+cgu:
+    path: /cgu
+    controller : App\Controller\HomeController::cgu
