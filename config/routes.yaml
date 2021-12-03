@@ -32,7 +32,7 @@ app_register:
 
 panier:
     path: /panier
-    controller: App\Controller\HomeController::panier
+    controller: App\Controller\PanierController::index
 
 espaceperso:
     path: /espaceperso
@@ -41,3 +41,7 @@ espaceperso:
 dashboard:
     path: /admin
     controller: App\Controller\Admin\DashboardController::index
+
+cgu:
+    path: /cgu
+    controller : App\Controller\HomeController::cgu

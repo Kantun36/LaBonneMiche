@@ -3,6 +3,7 @@
 
 <head>
     <link rel="icon" type="image/x-icon" href=" {{  asset('img/logobeigenoir.ico') }}" sizes="120x120" />
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/jquery/2.1.3/jquery.min.js"></script>
 </head>
 
 <header>
@@ -81,7 +82,7 @@
                         <li class="nav-item">
 
                             <a id="buttonHeader" class="nav-link ac" onclick="location.href='/contact/new'" role="button">
-                                Contact
+                                Nous contacter
                                 <span id="span"></span>
                                 <span id="span"></span>
                                 <span id="span"></span></a>
@@ -144,9 +145,110 @@
 
 
 
+                <ul class="navbar-right">
+                    <li><a href="#" id="cart" class="align-content-center">
+                            <svg xmlns="http://www.w3.org/2000/svg" width="40"  fill="currentColor" class="bi bi-cart2 glyphicon b-icon" viewBox="0 0 16 16"  >
+                                <path d="M0 2.5A.5.5 0 0 1 .5 2H2a.5.5 0 0 1 .485.379L2.89 4H14.5a.5.5 0 0 1 .485.621l-1.5 6A.5.5 0 0 1 13 11H4a.5.5 0 0 1-.485-.379L1.61 3H.5a.5.5 0 0 1-.5-.5zM3.14 5l1.25 5h8.22l1.25-5H3.14zM5 13a1 1 0 1 0 0 2 1 1 0 0 0 0-2zm-2 1a2 2 0 1 1 4 0 2 2 0 0 1-4 0zm9-1a1 1 0 1 0 0 2 1 1 0 0 0 0-2zm-2 1a2 2 0 1 1 4 0 2 2 0 0 1-4 0z"/>
+                            </svg>
+                            <span class="badge">
+                                {% if app.session.get('panier') %}
+                                    {{ app.session.get('panierData').data.quantitePanier }}
+                                {% else %}
+                                    0
+                                {% endif %}
+                            </span></a></li>
+                </ul>
+
+
+
+
             </div>
         </nav>
     </div>
+
+    <div class="container">
+        <div class="shopping-cart">
+            <div class="shopping-cart-header">
+                <svg xmlns="http://www.w3.org/2000/svg" width="40"  fill="currentColor" class="bi bi-cart2 glyphicon b-icon" viewBox="0 0 16 16"  >
+                    <path d="M0 2.5A.5.5 0 0 1 .5 2H2a.5.5 0 0 1 .485.379L2.89 4H14.5a.5.5 0 0 1 .485.621l-1.5 6A.5.5 0 0 1 13 11H4a.5.5 0 0 1-.485-.379L1.61 3H.5a.5.5 0 0 1-.5-.5zM3.14 5l1.25 5h8.22l1.25-5H3.14zM5 13a1 1 0 1 0 0 2 1 1 0 0 0 0-2zm-2 1a2 2 0 1 1 4 0 2 2 0 0 1-4 0zm9-1a1 1 0 1 0 0 2 1 1 0 0 0 0-2zm-2 1a2 2 0 1 1 4 0 2 2 0 0 1-4 0z"/>
+                </svg>
+                <span class="badge">
+
+                    {% if app.session.get('panier') %}
+                        {{ app.session.get('panierData').data.quantitePanier }}
+                    {% else %}
+                        0
+                    {% endif %}
+
+
+
+                </span>
+                <div class="shopping-cart-total">
+                    <span class="lighter-text">Total:</span>
+                    <span class="main-color-text">
+                        {% if app.session.get('panier') %}
+                            {{ app.session.get('panierData').data.prixPanier }}
+                        {% endif %}
+                    </span>
+                </div>
+            </div>
+
+            <ul class="shopping-cart-items">
+                {% if app.session.get('panier') %}
+
+                    {% for element in app.session.get('panierData').produits %}
+                        <li class="clearfix">
+                            <img src="https://s3-us-west-2.amazonaws.com/s.cdpn.io/195612/cart-item1.jpg" alt="item1" />
+                            <span class="item-name">{{ element.produit.nomProduit }}</span>
+                            <span class="item-price">{{ element.produit.prixProduit }}</span>
+                            <span class="item-quantity">Quantite : {{ element.quantite }}</span>
+                            <a href="{{ path('panier_delete_all',{'id': element.produit.id}) }}"><svg xmlns="http://www.w3.org/2000/svg" width="16" height="16" fill="currentColor" class="bi bi-x" viewBox="0 0 16 16">
+                                    <path d="M4.646 4.646a.5.5 0 0 1 .708 0L8 7.293l2.646-2.647a.5.5 0 0 1 .708.708L8.707 8l2.647 2.646a.5.5 0 0 1-.708.708L8 8.707l-2.646 2.647a.5.5 0 0 1-.708-.708L7.293 8 4.646 5.354a.5.5 0 0 1 0-.708z"/>
+                                </svg>
+                            </a>
+                            <div class="quantity">
+                                <a href="{{ path('panier_delete',{ 'id':element.produit.id }) }}" type="button" value="-" class="minus">
+                                    <svg xmlns="http://www.w3.org/2000/svg" width="16" height="16" fill="currentColor" class="bi bi-dash" viewBox="0 0 16 16">
+                                        <path d="M4 8a.5.5 0 0 1 .5-.5h7a.5.5 0 0 1 0 1h-7A.5.5 0 0 1 4 8z"/>
+                                    </svg>
+                                </a>
+                                <input type="text" name="quantity" title="Qty" value="{{ element.quantite }}" class="qty" size="4">
+                                <a href="{{ path('panier_add',{ 'id':element.produit.id }) }}" type="button" value="+" class="plus">
+                                    <svg xmlns="http://www.w3.org/2000/svg" width="16" height="16" fill="currentColor" class="bi bi-plus" viewBox="0 0 16 16">
+                                        <path d="M8 4a.5.5 0 0 1 .5.5v3h3a.5.5 0 0 1 0 1h-3v3a.5.5 0 0 1-1 0v-3h-3a.5.5 0 0 1 0-1h3v-3A.5.5 0 0 1 8 4z"/>
+                                    </svg>
+                                </a>
+                            </div>
+                        </li>
+                    {% endfor %}
+                {% else %}
+                    <li>
+                        Panier vide
+                    </li>
+                {% endif %}
+
+
+
+
+
+                <a href="{{ path('panier') }}" class="button">Aller au Panier</a>
+            </ul>
+        </div>
+    </div>
+
+
+
+
+
+    <script>
+        (function(){
+
+            $("#cart").on("click", function() {
+                $(".shopping-cart").fadeToggle( "fast");
+            });
+
+        })();
+    </script>
 
     <script>
         /* When the user clicks on the button,

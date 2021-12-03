@@ -11,39 +11,39 @@
 {% endblock %}
 
 {% block body %}
-    <style>
-        .banner-image {
-            background-image: url('/img/bgimage.jpg');
-            background-size: cover;
-        }
-    </style>
+<style>
+    .banner-image {
+        background-image: url('/img/bgimage.jpg');
+        background-size: cover;
+    }
+</style>
 
-    {% for flashError in app.flashes('verify_email_error') %}
-        <div class="alert alert-danger" role="alert">{{ flashError }}</div>
-    {% endfor %}
+{% for flashError in app.flashes('verify_email_error') %}
+    <div class="alert alert-danger" role="alert">{{ flashError }}</div>
+{% endfor %}
 
 
-    <section class="vh-100 bg-image " style="background-image: url({{ asset('img/bglogin.jpg') }}); background-repeat: no-repeat;
-            background-size: cover;">
-        <div class="banner-image mask d-flex align-items-center h-100">
-            <div class="container h-100">
-                <div class="row d-flex justify-content-center align-items-center h-100">
-                    <div class="col-12 col-md-9 col-lg-7 col-xl-6">
-                        <div class="card" style="background:transparent; border-radius:10%;">
-                            <div class="card-body p-5 cardlogin">
-                                <h2 class="text-center mb-5 titlelogin">Connectez-vous</h2>
+<section class="vh-100 bg-image " style="background-image: url({{ asset('img/bglogin.jpg') }}); background-repeat: no-repeat;
+        background-size: cover;">
+    <div class="banner-image mask d-flex align-items-center h-100">
+        <div class="container h-100">
+            <div class="row d-flex justify-content-center align-items-center h-100">
+                <div class="col-12 col-md-9 col-lg-7 col-xl-6">
+                    <div class="card" style="background:transparent; border-radius:10%;">
+                        <div class="card-body p-5 cardlogin">
+                            <h2 class="text-center mb-5 titlelogin">Connectez-vous</h2>
 
-                                <form method="post">
+                            <form method="post">
 
-                                    {% if error %}
-                                        <div class="alert alert-danger">{{ error.messageKey|trans(error.messageData, 'security') }}</div>
-                                    {% endif %}
+                                {% if error %}
+                                    <div class="alert alert-danger">{{ error.messageKey|trans(error.messageData, 'security') }}</div>
+                                {% endif %}
 
-                                    {% if app.user %}
-                                        <div class="mb-3">
-                                            Vous êtes bien connecté avec l'adresse e-mail {{ app.user.username }}, <a href="{{ path('app_logout') }}">Se déconnecter</a>
-                                        </div>
-                                    {% endif %}
+                                {% if app.user %}
+                                    <div class="mb-3">
+                                        Vous êtes bien connecté avec l'adresse e-mail {{ app.user.username }}, <a href="{{ path('app_logout') }}">Se déconnecter</a>
+                                    </div>
+                                {% endif %}
 
                                 <div class="form-outline mb-4">
                                     <input type="email" value="{{ last_username }}" name="email" id="inputEmail" class="form-control form-control-lg" placeholder="Email *" autocomplete="email" required autofocus>
@@ -53,20 +53,19 @@
                                     <input type="password" name="password" id="inputPassword" class="form-control form-control-lg" placeholder="Mot de passe *" autocomplete="current-password" required>
                                 </div>
 
-                                    <input type="hidden" name="_csrf_token"
-                                           value="{{ csrf_token('authenticate') }}"
-                                    >
+                                <input type="hidden" name="_csrf_token"
+                                       value="{{ csrf_token('authenticate') }}"
+                                >
 
-                                    {#
-                                    Uncomment this section and add a remember_me option below your firewall to activate remember me functionality.
-                                    See https://symfony.com/doc/current/security/remember_me.html
-
-                                    <div class="checkbox mb-3">
-                                        <label>
-                                            <input type="checkbox" name="_remember_me"> Remember me
-                                        </label>
-                                    </div>
-                                    #}
+                                {#
+                                Uncomment this section and add a remember_me option below your firewall to activate remember me functionality.
+                                See https://symfony.com/doc/current/security/remember_me.html
+                                <div class="checkbox mb-3">
+                                    <label>
+                                        <input type="checkbox" name="_remember_me"> Remember me
+                                    </label>
+                                </div>
+                                #}
 
                                 <div class="d-flex justify-content-center">
                                     <button id="btnregisterlogin" class="btn btn-success btn-block btn-lg " type="submit">
@@ -77,13 +76,12 @@
 
                                 <p class="text-center text-muted mt-5 mb-0">Pas encore de compte ? <a href="/register" class="fw-bold text-body "><u class="linkregister">Inscrivez-vous</u></a></p>
 
-                                </form>
-                            </div>
+                            </form>
                         </div>
                     </div>
                 </div>
             </div>
         </div>
-    </section>
+    </div>
+</section>
 {% endblock %}
-
