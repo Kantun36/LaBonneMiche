@@ -735,7 +735,7 @@ nav {
 .badge {
   background-color: #6394F8;
   border-radius: 10px;
-  color: white;
+  color: violet;
   display: inline-block;
   font-size: 12px;
   line-height: 1;
@@ -748,7 +748,7 @@ nav {
 .shopping-cart {
   margin: 20px 0;
   float: right;
-  background: white;
+  background: red;
   width: 320px;
   position: relative;
   border-radius: 3px;
@@ -756,7 +756,7 @@ nav {
 
 
   .shopping-cart-header {
-    border-bottom: 1px solid #E8E8E8;
+    border-bottom: 1px solid red;
     padding-bottom: 15px;
 
     .shopping-cart-total {
@@ -804,7 +804,7 @@ nav {
   width: 0;
   position: absolute;
   pointer-events: none;
-  border-bottom-color: white;
+  border-bottom-color: blue;
   border-width: 8px;
   margin-left: -8px;
 }
@@ -818,7 +818,7 @@ nav {
 
 .button {
   background: $main-color;
-  color:white;
+  color:blue;
   text-align: center;
   padding: 12px;
   text-decoration: none;
