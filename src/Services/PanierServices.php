@@ -51,6 +51,7 @@ class PanierServices{
 
     public function updatePanier($panier){
         $this->session->set('panier',$panier);
+        $this->session->set('panierData',$this->getFullPanier());
     }
 
     public function getPanier(){
@@ -61,19 +62,28 @@ class PanierServices{
         $panier = $this->getPanier();
 
         $fullPanier = [];
+        $quantitePanier = 0;
+        $prixPanier=0;
         foreach ($panier as $id => $quantite){
             $produit = $this->produitRepository->find($id);
             if ($produit){
-                $fullPanier[] =
+                $fullPanier['produits'][] =
                     [
-                        "quantite " => $quantite,
+                        "quantite" => $quantite,
                         "produit" => $produit
                     ];
+                $quantitePanier=$quantitePanier+$quantite;
+                $prixPanier=$quantite * $produit->getPrixProduit();
             }
             else{
                 $this->deleteFromPanier($id);
             }
         }
+        $fullPanier['data']=[
+            "quantitePanier" => $quantitePanier,
+            "prixPanier" => $prixPanier
+        ];
+
         return $fullPanier;
     }
 }

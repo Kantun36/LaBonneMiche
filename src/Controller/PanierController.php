@@ -16,6 +16,9 @@ class PanierController extends AbstractController
     {
         $panier= $panierServices->getFullPanier();
 
+        if (!isset($panier['produits'])){
+            $this->redirectToRoute("produits");
+        }
         return $this->render('panier/index.html.twig', [
             'controller_name' => 'PanierController',
             'panier' => $panier
@@ -24,7 +27,7 @@ class PanierController extends AbstractController
 
 
     /**
-     * @Route("/panier/add/{id}" ="panier_add")
+     * @Route("/panier/add/{id}", name="panier_add")
      */
     public function addPanier( PanierServices  $panierServices, $id): Response
     {
@@ -34,11 +37,22 @@ class PanierController extends AbstractController
     }
 
     /**
-     * @Route("/panier/delete/{id}" name="panier_delete")
+     * @Route("/panier/delete/{id}", name="panier_delete")
      */
     public function deletePanier( PanierServices  $panierServices,$id): Response
     {
         $panierServices->deleteFromPanier($id);
+        return $this->redirectToRoute("panier");
+
+    }
+
+
+    /**
+     * @Route("/panier/delete-all/{id}", name="panier_delete_all")
+     */
+    public function deleteallPanier( PanierServices  $panierServices,$id): Response
+    {
+        $panierServices->deleteAllToPanier($id);
         return $this->redirectToRoute("panier");
 
     }
