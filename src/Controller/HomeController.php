@@ -31,9 +31,15 @@ class HomeController extends AbstractController
         ]);
     }
 
-    public function forum(): Response
+    public function contact(): Response
     {
-        return $this-> render('forum.html.twig' , ['controller_name' => 'HomeController',
+        return $this-> render('contact/new.html.twig' , ['controller_name' => 'HomeController',
+        ]);
+    }
+
+    public function cgu(): Response
+    {
+        return $this-> render('cgu/index.html.twig' , ['controller_name' => 'HomeController',
         ]);
     }
 }

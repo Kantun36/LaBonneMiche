@@ -14,9 +14,9 @@ histoire:
     path: /histoire
     controller : App\Controller\HomeController::histoire
 
-forum:
-    path: /forum
-    controller : App\Controller\HomeController::forum
+contact:
+    path: /contact/new
+    controller : App\Controller\HomeController::contact
 
 app_login:
     path: /login
@@ -34,6 +34,14 @@ panier:
     path: /panier
     controller: App\Controller\PanierController::index
 
+espaceperso:
+    path: /espaceperso
+    controller: App\Controller\EspacepersoController::index
+
 dashboard:
     path: /admin
     controller: App\Controller\Admin\DashboardController::index
+
+cgu:
+    path: /cgu
+    controller : App\Controller\HomeController::cgu

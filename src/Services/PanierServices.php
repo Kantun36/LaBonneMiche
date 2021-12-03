@@ -29,7 +29,7 @@ class PanierServices{
         $panier = $this->getPanier();
         if (isset($panier[$id])){
             if ($panier[$id]>1){
-                $panier[id]--;
+                $panier[$id]--;
             }
             else{
                 unset($panier[$id]);
