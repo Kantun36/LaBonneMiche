@@ -45,3 +45,11 @@ dashboard:
 cgu:
     path: /cgu
     controller : App\Controller\HomeController::cgu
+
+engagements:
+    path: /engagements
+    controller : App\Controller\HomeController::engagements
+
+franchise:
+    path: /franchise/new
+    controller : App\Controller\HomeController::franchise

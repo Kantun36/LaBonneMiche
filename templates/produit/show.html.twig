@@ -28,9 +28,7 @@
                         <h2 class="mt-5 card-description">
                             {{ produit.prixProduit }}<small class="text-success"></small>€
                         </h2>
-                        <button class="btn btn-dark btn-rounded mr-1" data-toggle="tooltip" title="" data-original-title="Add to cart">
-                            <i class="fas fa-cart-plus"></i>
-                        </button>
+
                         {% if app.user %}
                            <a id="btn-panier-acheter" class="btn btn-primary" href="{{ path('panier_add',{'id':produit.id}) }}">Ajouter au panier</a>
                         {% else %}

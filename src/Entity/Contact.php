@@ -3,6 +3,8 @@
 namespace App\Entity;
 
 use App\Repository\ContactRepository;
+use Doctrine\Common\Collections\ArrayCollection;
+use Doctrine\Common\Collections\Collection;
 use Doctrine\ORM\Mapping as ORM;
 
 /**
@@ -18,10 +20,7 @@ class Contact
      */
     private $id;
 
-    /**
-     * @ORM\Column(type="integer")
-     */
-    private $IdContact;
+
 
     /**
      * @ORM\Column(type="string", length=255)
@@ -33,22 +32,26 @@ class Contact
      */
     private $TextContact;
 
+    /**
+     * @ORM\Column(type="string", length=255)
+     */
+    private $NomContact;
+
+    /**
+     * @ORM\Column(type="string", length=255)
+     */
+    private $PrenomContact;
+
+    /**
+     * @ORM\Column(type="string", length=255)
+     */
+    private $MailContact;
+
     public function getId(): ?int
     {
         return $this->id;
     }
 
-    public function getIdContact(): ?int
-    {
-        return $this->IdContact;
-    }
-
-    public function setIdContact(int $IdContact): self
-    {
-        $this->IdContact = $IdContact;
-
-        return $this;
-    }
 
     public function getRaisonContact(): ?string
     {
@@ -70,6 +73,42 @@ class Contact
     public function setTextContact(string $TextContact): self
     {
         $this->TextContact = $TextContact;
+
+        return $this;
+    }
+
+    public function getNomContact(): ?string
+    {
+        return $this->NomContact;
+    }
+
+    public function setNomContact(string $NomContact): self
+    {
+        $this->NomContact = $NomContact;
+
+        return $this;
+    }
+
+    public function getPrenomContact(): ?string
+    {
+        return $this->PrenomContact;
+    }
+
+    public function setPrenomContact(string $PrenomContact): self
+    {
+        $this->PrenomContact = $PrenomContact;
+
+        return $this;
+    }
+
+    public function getMailContact(): ?string
+    {
+        return $this->MailContact;
+    }
+
+    public function setMailContact(string $MailContact): self
+    {
+        $this->MailContact = $MailContact;
 
         return $this;
     }
