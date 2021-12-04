@@ -34,6 +34,10 @@ panier:
     path: /panier
     controller: App\Controller\PanierController::index
 
+adresse:
+    path: /adresse
+    controller: App\Controller\AdresseController::index
+
 espaceperso:
     path: /espaceperso
     controller: App\Controller\EspacepersoController::index

@@ -19,10 +19,6 @@ class Commande
      */
     private $id;
 
-    /**
-     * @ORM\Column(type="integer")
-     */
-    private $IdCommande;
 
     /**
      * @ORM\Column(type="float")
@@ -55,17 +51,6 @@ class Commande
         return $this->id;
     }
 
-    public function getIdCommande(): ?int
-    {
-        return $this->IdCommande;
-    }
-
-    public function setIdCommande(int $IdCommande): self
-    {
-        $this->IdCommande = $IdCommande;
-
-        return $this;
-    }
 
     public function getPrixCommande(): ?float
     {

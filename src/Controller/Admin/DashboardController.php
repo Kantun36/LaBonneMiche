@@ -36,10 +36,10 @@ class DashboardController extends AbstractDashboardController
 
                 yield MenuItem::linktoRoute('Back to the website', 'fas fa-home', 'index');
                 yield MenuItem::linkToCrud('Produit', ' fas fa-bread-slice', Produit::class);
-                yield MenuItem::linkToCrud('Ingredient', ' fas fa-bread-slice', Ingredient::class);
-                yield MenuItem::linkToCrud('Article', ' fas fa-bread-slice', Article::class);
-                yield MenuItem::linkToCrud('Paragraphe', ' fas fa-bread-slice', Paragraphe::class);
-                yield MenuItem::linkToCrud('Commentaire', ' fas fa-bread-slice', Commentaire::class);
+                yield MenuItem::linkToCrud('Ingredient', 'fas fa-apple-alt', Ingredient::class);
+                yield MenuItem::linkToCrud('Article', 'fas fa-newspaper', Article::class);
+                yield MenuItem::linkToCrud('Paragraphe', 'fas fa-sticky-note', Paragraphe::class);
+                yield MenuItem::linkToCrud('Commentaire', 'fas fa-comments', Commentaire::class);
                 yield MenuItem::linkToLogout('Logout', 'fa fa-exit');
     }
 }
