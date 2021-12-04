@@ -17,7 +17,7 @@
             </tr>
             <tr>
                 <th>Contenu</th>
-                <td>{{ article.Contenu }}</td>
+                <td>{{ article.Contenu|raw }}</td>
             </tr>
             <tr>
                 <th>Contenu</th>
@@ -32,7 +32,7 @@
                                 {{ paragraphe.titreParagraphe }}
                             </div>
                             <div class="text">
-                                {{ paragraphe.contenuParagraphe }}
+                                {{ paragraphe.contenuParagraphe|raw }}
                             </div>
                         </div>
                 </td>
