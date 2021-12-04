@@ -51,7 +51,7 @@ class ProduitCrudController extends AbstractCrudController
             NumberField::new('poidsProduit'),
             AssociationField::new('Ingredients'),
             ImageField::new('image')->setUploadDir("public/img/produits")
-                ->setBasepath("public/img/produits"),
+                                                      ->setBasepath("public/img/produits"),
 
 
         ];

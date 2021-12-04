@@ -14,7 +14,7 @@
                     <span class="navbar-toggler-icon"></span>
                 </button>
                 <div class="collapse navbar-collapse justify-content-center alignerdroite" id="navbarNavDropdown">
-                    <nav class="navbar navbar-lights headhomer-nav">
+                    <nav class="navbar navbar-lights">
                         <a class="navbar-brand" href="/">
                             <img src="{{ asset('img/logobeigenoir.png') }}" alt="" width="75" >
                         </a>
@@ -102,13 +102,29 @@
 
                 </div>
 
+                <div class="align-content-end ">
+
+                    {% if app.user %}
+                        <a class="hoverbtnpl" onclick="location.href='/panier'" role="button">
+                            <svg xmlns="http://www.w3.org/2000/svg" width="40"  fill="currentColor" class="bi bi-cart2 glyphicon b-icon" viewBox="0 0 16 16"  >
+                                <path d="M0 2.5A.5.5 0 0 1 .5 2H2a.5.5 0 0 1 .485.379L2.89 4H14.5a.5.5 0 0 1 .485.621l-1.5 6A.5.5 0 0 1 13 11H4a.5.5 0 0 1-.485-.379L1.61 3H.5a.5.5 0 0 1-.5-.5zM3.14 5l1.25 5h8.22l1.25-5H3.14zM5 13a1 1 0 1 0 0 2 1 1 0 0 0 0-2zm-2 1a2 2 0 1 1 4 0 2 2 0 0 1-4 0zm9-1a1 1 0 1 0 0 2 1 1 0 0 0 0-2zm-2 1a2 2 0 1 1 4 0 2 2 0 0 1-4 0z"/>
+                            </svg>
+                        </a>
+                    {% else %}
+                        <a class="hoverbtnpl" onclick="location.href='/login'" role="button">
+                            <svg xmlns="http://www.w3.org/2000/svg" width="40"  fill="currentColor" class="bi bi-cart2 glyphicon b-icon" viewBox="0 0 16 16"  >
+                                <path d="M0 2.5A.5.5 0 0 1 .5 2H2a.5.5 0 0 1 .485.379L2.89 4H14.5a.5.5 0 0 1 .485.621l-1.5 6A.5.5 0 0 1 13 11H4a.5.5 0 0 1-.485-.379L1.61 3H.5a.5.5 0 0 1-.5-.5zM3.14 5l1.25 5h8.22l1.25-5H3.14zM5 13a1 1 0 1 0 0 2 1 1 0 0 0 0-2zm-2 1a2 2 0 1 1 4 0 2 2 0 0 1-4 0zm9-1a1 1 0 1 0 0 2 1 1 0 0 0 0-2zm-2 1a2 2 0 1 1 4 0 2 2 0 0 1-4 0z"/>
+                            </svg>
+                        </a>
+                    {% endif %}
+
+                </div>
 
 
 
 
 
-                <div class="align-content-end " >
-                <ul class="navbar-right bouton-panier">
+                <ul class="navbar-right">
                     <li><a href="#" id="cart" class="align-content-center">
                             <svg xmlns="http://www.w3.org/2000/svg" width="40"  fill="currentColor" class="bi bi-cart2 glyphicon b-icon" viewBox="0 0 16 16"  >
                                 <path d="M0 2.5A.5.5 0 0 1 .5 2H2a.5.5 0 0 1 .485.379L2.89 4H14.5a.5.5 0 0 1 .485.621l-1.5 6A.5.5 0 0 1 13 11H4a.5.5 0 0 1-.485-.379L1.61 3H.5a.5.5 0 0 1-.5-.5zM3.14 5l1.25 5h8.22l1.25-5H3.14zM5 13a1 1 0 1 0 0 2 1 1 0 0 0 0-2zm-2 1a2 2 0 1 1 4 0 2 2 0 0 1-4 0zm9-1a1 1 0 1 0 0 2 1 1 0 0 0 0-2zm-2 1a2 2 0 1 1 4 0 2 2 0 0 1-4 0z"/>
@@ -121,7 +137,7 @@
                                 {% endif %}
                             </span></a></li>
                 </ul>
-                </div>
+
 
 
 
@@ -147,7 +163,7 @@
 
                 </span>
                 <div class="shopping-cart-total">
-                    <span class="lighter-text text-panier">Total:</span>
+                    <span class="lighter-text">Total:</span>
                     <span class="main-color-text">
                         {% if app.session.get('panier') %}
                             {{ app.session.get('panierData').data.prixPanier }}
@@ -194,13 +210,7 @@
 
 
 
-
-                {% if app.user %}
-                    <a href="{{ path('panier') }}" class="button" id="btnregisterlogin">Aller au Panier</a>
-                {% else %}
-                    <a href="{{ path('app_login') }}" class="button" id="btnregisterlogin">Se connecter</a>
-                {% endif %}
-
+                <a href="{{ path('panier') }}" class="button">Aller au Panier</a>
             </ul>
         </div>
     </div>
@@ -211,7 +221,7 @@
 
     <script>
         (function(){
-            $(".shopping-cart").hide();
+
             $("#cart").on("click", function() {
                 $(".shopping-cart").fadeToggle( "fast");
             });
