@@ -19,12 +19,31 @@
                 <th>Contenu</th>
                 <td>{{ article.Contenu }}</td>
             </tr>
+            <tr>
+                <th>Contenu</th>
+                <td>
+                </td>
+            <tr>
+                    {% for paragraphe in article.paragraphes %}
+                <th>Paragraphe numero {{ paragraphe.numeroParagraphe }}</th>
+                <td>
+                        <div class="container">
+                            <div class="title h3 ">
+                                {{ paragraphe.titreParagraphe }}
+                            </div>
+                            <div class="text">
+                                {{ paragraphe.contenuParagraphe }}
+                            </div>
+                        </div>
+                </td>
+            </tr>
+                    {% endfor %}
+
+
         </tbody>
     </table>
 
-    {% for paragraphe in article.paragraphes %}
-        {{ paragraphe.titreParagraphe }}
-    {% endfor  %}
+
 
     <a href="{{ path('article_index') }}">back to list</a>
 

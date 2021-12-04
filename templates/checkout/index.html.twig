@@ -3,30 +3,19 @@
 {% block title %}Hello CheckoutController!{% endblock %}
 
 {% block body %}
-    <div class="section">
+    <div class="section checkout">
         <div class="container">
+
             <div class="row">
                 <div class="col-md-6">
                     <div class="heading_s1">
                         <h4>Your delivery Address</h4>
+
                         <div class="content">
 
                         </div>
+                        <a href="{{ path('adresse_new')}}" class="btn btn-fill-out btn-block mt-1">Add new address</a>
                     </div>
-                    <div class="heading_s1">
-                        <h4>Your carrier</h4>
-                        <div class="content">
-
-
-                        </div>
-                    </div>
-                    <div class="heading_s1">
-                        <h4>Additional information</h4>
-                        <div class="form-group mb-0">
-                            <textarea name="name" rows="8" cols="50"></textarea>
-                        </div>
-                    </div>
-                </div>
 
                 <div class="col-md-6">
                     <div class="order_review">
@@ -42,29 +31,33 @@
                                 </tr>
                                 </thead>
                                 <tbody>
-                                <tr>
-                                    <td> Product Name <span class="product-qty">x 1</span></td>
-                                    <td>$ 50</td>
-                                </tr>
-                                <tr>
-                                    <td> Product Name <span class="product-qty">x 1</span></td>
-                                    <td>$ 50</td>
-                                </tr>
+
+                                <tbody>
+                                {% if app.session.get('panier') %}
+                                    {% for element in panier.produits %}
+                                    <tr>
+                                        <td> {{ element.produit.nomProduit }} <span class="product-qty">x {{ element.quantite }}</span></td>
+                                        <td>{{ element.produit.prixProduit}}  €</td>
+                                    </tr>
+                                {% endfor %}
+
                                 </tbody>
                                 <tfoot>
                                 <tr>
                                     <th>SubTotal HT</th>
-                                    <td class="product-subtotal">$100</td>
+                                    <td class="product-subtotal">${{ panier.data.prixPanier* 0.80 }}</td>
                                 </tr>
                                 <tr>
                                     <th>Taxe</th>
-                                    <td class="product-subtotal">$20</td>
+                                    <td class="product-subtotal">${{ panier.data.prixPanier - panier.data.prixPanier* 0.80  }}</td>
                                 </tr>
                                 <tr>
                                     <th>Total</th>
-                                    <td class="product-subtotal">$120</td>
+                                    <td class="product-subtotal">${{ panier.data.prixPanier }}</td>
                                 </tr>
                                 </tfoot>
+
+                                {% endif %}
                             </table>
                         </div>
                         <div class="payment_method">
