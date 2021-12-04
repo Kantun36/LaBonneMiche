@@ -3,6 +3,10 @@
 namespace App\Controller\Admin;
 
 
+use App\Entity\Article;
+use App\Entity\Commentaire;
+use App\Entity\Ingredient;
+use App\Entity\Paragraphe;
 use App\Entity\Produit;
 use EasyCorp\Bundle\EasyAdminBundle\Config\Dashboard;
 use EasyCorp\Bundle\EasyAdminBundle\Config\MenuItem;
@@ -31,7 +35,11 @@ class DashboardController extends AbstractDashboardController
     {
 
                 yield MenuItem::linktoRoute('Back to the website', 'fas fa-home', 'index');
-                yield MenuItem::linkToCrud('Produit', 'fas fa-cart-arrow-down', Produit::class);
+                yield MenuItem::linkToCrud('Produit', ' fas fa-bread-slice', Produit::class);
+                yield MenuItem::linkToCrud('Ingredient', ' fas fa-bread-slice', Ingredient::class);
+                yield MenuItem::linkToCrud('Article', ' fas fa-bread-slice', Article::class);
+                yield MenuItem::linkToCrud('Paragraphe', ' fas fa-bread-slice', Paragraphe::class);
+                yield MenuItem::linkToCrud('Commentaire', ' fas fa-bread-slice', Commentaire::class);
                 yield MenuItem::linkToLogout('Logout', 'fa fa-exit');
     }
 }

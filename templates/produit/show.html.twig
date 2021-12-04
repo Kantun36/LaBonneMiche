@@ -10,8 +10,14 @@
             </div>
             <div class="">
                 <h1 class="title">{{ produit.nomProduit }}</h1>
-
-
+                <select class="form-select d-inline " id="nombreProduit">
+                    <option value="1">1</option>
+                    <option value="2">2</option>
+                    <option value="3">3</option>
+                    <option value="4">4</option>
+                    <option value="5">5</option>
+                </select>
+                <button class="btn btn-primary d-inline">Ajouter au panier</button>
             </div>
         </div>
     </div>
@@ -37,12 +43,7 @@
                         <button class="btn btn-dark btn-rounded mr-1" data-toggle="tooltip" title="" data-original-title="Add to cart">
                             <i class="fas fa-cart-plus"></i>
                         </button>
-                        {% if app.user %}
-                            <button class="btn btn-primary btn-rounded"><a class="text-black" href="{{ path('panier_add',{'id':produit.id}) }}">Ajouter au panier</a></button>
-                        {% else %}
-                            <button class="btn btn-primary btn-rounded"><a class="text-black" href="{{ path('app_login')}}">Ajouter au panier</a></button>
-                        {% endif %}
-
+                        <button class="btn btn-primary btn-rounded"><a class="text-black" href="{{ path('panier_add',{'id':produit.id}) }}">Acheter</a></button>
                         <h3 class="box-title mt-5">Key Highlights</h3>
                         <ul class="list-unstyled">
                             <li><i class="fa fa-check text-success"></i>Sturdy structure</li>
@@ -55,7 +56,76 @@
                         {%for ingredient in produit.ingredients %}
                             {{ include('ingredient/show.html.twig') }}
                         {% endfor %}
+                        <div class="table-responsive">
+                            <table class="table table-striped table-product">
+                                <tbody>
 
+                                {%for ingredient in produit.ingredients %}
+                                    {{ ingredient.nomIngredient }}
+                                {% endfor %}
+                                <tr>
+                                    <td width="390">Brand</td>
+                                    <td>Stellar</td>
+                                </tr>
+                                <tr>
+                                    <td>Delivery Condition</td>
+                                    <td>Knock Down</td>
+                                </tr>
+                                <tr>
+                                    <td>Seat Lock Included</td>
+                                    <td>Yes</td>
+                                </tr>
+                                <tr>
+                                    <td>Type</td>
+                                    <td>Office Chair</td>
+                                </tr>
+                                <tr>
+                                    <td>Style</td>
+                                    <td>Contemporary&amp;Modern</td>
+                                </tr>
+                                <tr>
+                                    <td>Wheels Included</td>
+                                    <td>Yes</td>
+                                </tr>
+                                <tr>
+                                    <td>Upholstery Included</td>
+                                    <td>Yes</td>
+                                </tr>
+                                <tr>
+                                    <td>Upholstery Type</td>
+                                    <td>Cushion</td>
+                                </tr>
+                                <tr>
+                                    <td>Head Support</td>
+                                    <td>No</td>
+                                </tr>
+                                <tr>
+                                    <td>Suitable For</td>
+                                    <td>Study&amp;Home Office</td>
+                                </tr>
+                                <tr>
+                                    <td>Adjustable Height</td>
+                                    <td>Yes</td>
+                                </tr>
+                                <tr>
+                                    <td>Model Number</td>
+                                    <td>F01020701-00HT744A06</td>
+                                </tr>
+                                <tr>
+                                    <td>Armrest Included</td>
+                                    <td>Yes</td>
+                                </tr>
+                                <tr>
+                                    <td>Care Instructions</td>
+                                    <td>Handle With Care,Keep In Dry Place,Do Not Apply Any Chemical For Cleaning.</td>
+                                </tr>
+                                <tr>
+                                    <td>Finish Type</td>
+                                    <td>Matte</td>
+                                </tr>
+                                </tbody>
+                            </table>
+                        </div>
                     </div>
                 </div>
             </div>
@@ -63,12 +133,40 @@
     </div>
 
 
+    <table class="table">
+        <tbody>
+        <tr>
+            <th>Id</th>
+            <td>{{ produit.id }}</td>
+        </tr>
+        <tr>
+            <th>NomProduit</th>
+            <td>{{ produit.nomProduit }}</td>
+        </tr>
+        <tr>
+            <th>PrixProduit</th>
+            <td>{{ produit.prixProduit }}</td>
+        </tr>
+        <tr>
+            <th>QuantiteProduit</th>
+            <td>{{ produit.quantiteProduit }}</td>
+        </tr>
+        <tr>
+            <th>PoidsProduit</th>
+            <td>{{ produit.poidsProduit }}</td>
+        </tr>
+        <tr>
+            <th>DescriptionProduit</th>
+            <td>{{ produit.DescriptionProduit }}</td>
+        </tr>
+        </tbody>
+    </table>
 
     <a href="{{ path('produit_index') }}">back to list</a>
 
+    <a href="{{ path('produit_edit', {'id': produit.id}) }}">edit</a>
 
-
-
+    {{ include('produit/_delete_form.html.twig') }}
 
 
 {% endblock %}

@@ -1,8 +1,8 @@
-@font-face {
+/*@font-face {
   font-family: "Brand";
   src: url("/public/Brand.woff") format("woff"),
   url("/public/Brand.ttf") format("truetype");
-}
+}*/
 
 body {
   overflow-x: hidden;
@@ -35,10 +35,6 @@ body {
   z-index: 1000;
 }
 
-.headhomer-nav{
-  background: transparent;
-}
-
 #dropdown-menu{
   background-color: #e3b364;
 }
@@ -67,7 +63,6 @@ h5{
 .b-icon{
   color: #e3b364 !important;
 }
-
 
 
 
@@ -334,7 +329,7 @@ h5{
 }
 .gradient-custom-4 {
   /* fallback for old browsers */
-  background: rgba(227,179,100,0.7);
+  background: #e3b364;
 
   /* Chrome 10-25, Safari 5.1-6 */
   background: -webkit-linear-gradient(to right top, #e3b364, #e3b364, #e3b364, #e3b364, #e3b364);
@@ -356,7 +351,7 @@ h5{
   position: absolute;
   content: " ";
   width: 3px;
-  background-color: rgba(0,0,0,0.9);
+  background-color: #eeeeee;
   left: 50%;
   margin-left: -1.5px;
 }
@@ -383,7 +378,7 @@ h5{
 .timeline > li > .timeline-panel {
   width: 46%;
   float: left;
-  border: 1px solid rgba(0,0,0,0.9);
+  border: 1px solid #d4d4d4;
   /*border-radius: 2px;*/
   padding: 2px;
   position: relative;
@@ -397,8 +392,8 @@ h5{
   right: -15px;
   display: inline-block;
   border-top: 15px solid transparent;
-  border-left: 15px solid rgba(0,0,0,0.9);
-  border-right: 0 solid rgba(0,0,0,0.9);
+  border-left: 15px solid #ccc;
+  border-right: 0 solid #ccc;
   border-bottom: 15px solid transparent;
   content: " ";
 }
@@ -408,13 +403,13 @@ h5{
   right: -14px;
   display: inline-block;
   border-top: 14px solid transparent;
-  border-left: 14px solid rgba(0,0,0,0.9);
-  border-right: 0 solid rgba(0,0,0,0.9);
+  border-left: 14px solid #fff;
+  border-right: 0 solid #fff;
   border-bottom: 14px solid transparent;
   content: " ";
 }
 .timeline > li > .timeline-badge {
-  color: rgba(0,0,0,0.9);
+  color: #fff;
   width: 24px;
   height: 24px;
   line-height: 50px;
@@ -449,7 +444,7 @@ h5{
   right: auto;
 }
 .timeline-badge > a {
-  color: rgba(0,0,0,0.9) !important;
+  color: #C5C7C5 !important;
 }
 .timeline-badge a:hover {
   color: #FF531F !important;
@@ -468,7 +463,7 @@ h5{
 }
 .timeline-footer{
   padding:20px;
-  background-color:rgba(0,0,0,0.9);
+  background-color:#f4f4f4;
 }
 .timeline-footer > a{
   cursor: pointer;
@@ -538,7 +533,7 @@ h5{
 .tooltip-inner{
   width:200px;
   padding:3px 8px;
-  color:rgba(0,0,0,0.9);
+  color:#fff;
   text-align:center;
   text-decoration:none;
   background-color:#FF531F;
@@ -646,7 +641,7 @@ h5{
 }
 .form-control {
   border: none;
-  border-bottom: 1px solid rgba(0,0,0,0.9);
+  border-bottom: 1px solid #ccc;
   padding-left: 0;
   padding-right: 0;
   border-radius: 0;
@@ -679,7 +674,7 @@ h5{
 }
 
 //CSS pour afficher le panier avec le bouton du menu
-$main-color: #e3b364;
+$main-color: #6394F8;
 $light-text: #ABB0BE;
 
 @import url(https://fonts.googleapis.com/css?family=Lato:300,400,700);
@@ -692,7 +687,7 @@ $light-text: #ABB0BE;
 
 body {
   font: 14px/22px "Lato", Arial, sans-serif;
-  background: #e3b364;
+  background: #6394F8;
 }
 
 .lighter-text {
@@ -704,7 +699,7 @@ body {
 }
 
 nav {
-  padding: 0 0 0 0;
+  padding: 20px 0 40px 0;
   background: #F8F8F8;
   font-size: 16px;
 
@@ -719,7 +714,7 @@ nav {
 
     li {
       display: inline;
-      padding-left: 0;
+      padding-left: 20px;
       a {
         color: #777777;
         text-decoration: none;
@@ -738,13 +733,13 @@ nav {
 }
 
 .badge {
-  background-color: #e3b364;
+  background-color: #6394F8;
   border-radius: 10px;
-  color: black;
+  color: white;
   display: inline-block;
   font-size: 12px;
   line-height: 1;
-  padding: 15px 7px;
+  padding: 3px 7px;
   text-align: center;
   vertical-align: middle;
   white-space: nowrap;
@@ -753,21 +748,15 @@ nav {
 .shopping-cart {
   margin: 20px 0;
   float: right;
-  background: rgba(0,0,0,0.9);
-  color: #e3b364;
+  background: white;
   width: 320px;
+  position: relative;
   border-radius: 3px;
-  z-index: 10;
-  padding: 2%;
-  margin-top: 3%;
-  position : absolute;
-  right:5%;
-  top: 10%;
-
+  padding: 20px;
 
 
   .shopping-cart-header {
-    border-bottom: 1px solid #e3b364;
+    border-bottom: 1px solid #E8E8E8;
     padding-bottom: 15px;
 
     .shopping-cart-total {
@@ -809,17 +798,16 @@ nav {
 .shopping-cart:after {
   bottom: 100%;
   left: 89%;
-  border: solid transparent ;
+  border: solid transparent;
   content: " ";
   height: 0;
   width: 0;
   position: absolute;
   pointer-events: none;
-  border-bottom-color: transparent;
+  border-bottom-color: white;
   border-width: 8px;
   margin-left: -8px;
 }
-
 
 .cart-icon {
   color: #515783;
@@ -830,7 +818,7 @@ nav {
 
 .button {
   background: $main-color;
-  color: #e3b364;
+  color:white;
   text-align: center;
   padding: 12px;
   text-decoration: none;
@@ -850,20 +838,7 @@ nav {
   clear: both;
 }
 
-.text-panier{
-  color: #e3b364;
-  border-color: #e3b364;
-}
 
-.body-panier{
-  background : rgba(224,205,165,0.627) ;
-}
-.check-panier{
-  background : rgba(0,0,0,0.9);
-  margin: 10%;
-  margin-bottom: 100%;
-}
 
-.bouton-panier{
-  margin-top : 40%;
-}
+
+

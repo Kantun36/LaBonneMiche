@@ -5,7 +5,7 @@
 {% block body %}
 
 
-    <div class="section body-panier">
+    <div class="section">
         <div class="container">
             <div class="row">
                 <div class="col-12">
@@ -57,7 +57,16 @@
 
 
                             </tbody>
-
+                            <tfoot>
+                            <tr>
+                                <th class="product-thumbnail">&nbsp;</th>
+                                <th class="product-name">Product</th>
+                                <th class="product-price">Price</th>
+                                <th class="product-quantity">Quantity</th>
+                                <th class="product-subtotal">Total</th>
+                                <th class="product-remove">Remove</th>
+                            </tr>
+                            </tfoot>
                         </table>
                     </div>
                 </div>
@@ -74,30 +83,30 @@
 
 
                 </div>
-                <div class="col-md-6 ">
-                    <div class="p-3 p-md-4 check-panier">
+                <div class="col-md-6">
+                    <div class="border p-3 p-md-4">
                         <div class="heading_s1 mb-3">
-                            <h6 class="text-panier">Panier Total</h6>
+                            <h6>Panier Total</h6>
                         </div>
                         <div class="table-responsive">
                             <table class="table">
                                 <tbody>
                                 <tr>
-                                    <td class="cart_total_label text-panier">Total HT</td>
-                                    <td class="cart_total_amount text-panier">{{ panier.data.prixPanier *0.80 }}€</td>
+                                    <td class="cart_total_label">Total HT</td>
+                                    <td class="cart_total_amount">{{ panier.data.prixPanier *0.80 }}€</td>
                                 </tr>
                                 <tr>
-                                    <td class="cart_total_label text-panier">Shipping</td>
-                                    <td class="cart_total_amount text-panier">Free Shipping</td>
+                                    <td class="cart_total_label">Shipping</td>
+                                    <td class="cart_total_amount">Free Shipping</td>
                                 </tr>
-                                <tr >
-                                    <td class="cart_total_label text-panier">Total TTC</td>
-                                    <td class="cart_total_amount text-panier"><strong>{{ panier.data.prixPanier }}</strong></td>
+                                <tr>
+                                    <td class="cart_total_label">Total TTC</td>
+                                    <td class="cart_total_amount"><strong>{{ panier.data.prixPanier }}</strong></td>
                                 </tr>
                                 </tbody>
                             </table>
                         </div>
-                        <a href="{{ path('checkout') }}" class=" btn-fill-out text-panier">Proceed To CheckOut</a>
+                        <a href="{{ path('checkout') }}" class="btn btn-fill-out">Proceed To CheckOut</a>
                     </div>
                 </div>
             </div>
