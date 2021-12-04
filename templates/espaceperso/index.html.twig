@@ -3,5 +3,10 @@
 {% block title %}Hello EspacepersoController!{% endblock %}
 
 {% block body %}
-    <a href="/logout" class="nav-link p-0 text-muted">Se déconnecter</a>
+
+    {% if is_granted('ROLE_ADMIN') %}
+        <a href="/admin"  class="button" id="btn-panier-acheter">Accéder à l'espace admin</a>
+    {% endif %}
+
+    <a href="/logout"  class="button" id="btn-panier-acheter">Se déconnecter</a>
 {% endblock %}

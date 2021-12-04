@@ -12,10 +12,6 @@
                 <td>{{ article.id }}</td>
             </tr>
             <tr>
-                <th>IdArticle</th>
-                <td>{{ article.IdArticle }}</td>
-            </tr>
-            <tr>
                 <th>Titre</th>
                 <td>{{ article.Titre }}</td>
             </tr>
@@ -25,6 +21,10 @@
             </tr>
         </tbody>
     </table>
+
+    {% for paragraphe in article.paragraphes %}
+        {{ paragraphe.titreParagraphe }}
+    {% endfor  %}
 
     <a href="{{ path('article_index') }}">back to list</a>
 

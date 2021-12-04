@@ -8,7 +8,7 @@ produits:
 
 actualite:
     path: /actualite
-    controller : App\Controller\HomeController::actualite
+    controller : App\Controller\ArticleController::index
 
 histoire:
     path: /histoire
