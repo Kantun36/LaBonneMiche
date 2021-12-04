@@ -19,9 +19,9 @@
         {% for article in articles %}
             <tr>
                 <td>{{ article.id }}</td>
-                <td>{{ article.IdArticle }}</td>
                 <td>{{ article.Titre }}</td>
-                <td>{{ article.Contenu }}</td>
+                <td>{{ article.Contenu |raw }}</td>
+
                 <td>
                     <a href="{{ path('article_show', {'id': article.id}) }}">show</a>
                     <a href="{{ path('article_edit', {'id': article.id}) }}">edit</a>

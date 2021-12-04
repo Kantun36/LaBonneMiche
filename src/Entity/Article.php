@@ -19,10 +19,6 @@ class Article
      */
     private $id;
 
-    /**
-     * @ORM\Column(type="integer")
-     */
-    private $IdArticle;
 
     /**
      * @ORM\Column(type="string", length=255)
@@ -60,17 +56,6 @@ class Article
         return $this->id;
     }
 
-    public function getIdArticle(): ?int
-    {
-        return $this->IdArticle;
-    }
-
-    public function setIdArticle(int $IdArticle): self
-    {
-        $this->IdArticle = $IdArticle;
-
-        return $this;
-    }
 
     public function getTitre(): ?string
     {
@@ -172,4 +157,9 @@ class Article
 
         return $this;
     }
+    public function __toString()
+    {
+        return $this->getTitre();
+    }
+
 }
