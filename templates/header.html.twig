@@ -161,7 +161,7 @@
 
                     {% for element in app.session.get('panierData').produits %}
                         <li class="clearfix">
-                            <img src="{{asset('img/'~element.produit.getCategorie~'/'~element.produit.getNomProduit~'.jpg')}}" class="img-responsive" width="30%">
+                            <img src="{{asset('img/produits/'~element.produit.getCategorie~'/'~element.produit.getNomProduit~'.jpg')}}" class="img-responsive" width="30%">
                             <span class="item-name">{{ element.produit.nomProduit }}</span>
                             <span class="item-price">{{ element.produit.prixProduit }}€</span>
                             <span class="item-quantity">Quantite : {{ element.quantite }}</span>
