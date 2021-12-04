@@ -14,30 +14,30 @@
                             <thead>
                             <tr>
                                 <th class="product-thumbnail">&nbsp;</th>
-                                <th class="product-name">Product</th>
-                                <th class="product-price">Price</th>
-                                <th class="product-quantity">Quantity</th>
+                                <th class="product-name">Produit</th>
+                                <th class="product-price">Prix</th>
+                                <th class="product-quantity">Quantité</th>
                                 <th class="product-subtotal">Total</th>
-                                <th class="product-remove">Remove</th>
+                                <th class="product-remove">Supprimer</th>
                             </tr>
                             </thead>
                             {% if app.session.get('panier') %}
                                 {% for element in panier.produits %}
 
                                     <tr>
-                                        <td class="product-thumbnail"><a href="#"><img src="http://placehold.it/300" alt="{{ element.produit.nomProduit }}"></a></td>
-                                        <td class="product-name" data-title="Product"><a href="#">{{ element.produit.nomProduit }}</a></td>
+                                        <td class="product-thumbnail pb-5"><a class="btn btn-panier-produit" href="#"> <img src="{{asset('img/'~element.produit.getCategorie~'/'~element.produit.getNomProduit~'.jpg')}}" class="img-responsive" width="30%"></a></td>
+                                        <td class="product-name" data-title="Product"><a class="btn btn-panier-produit"  href="#">{{ element.produit.nomProduit }}</a></td>
                                         <td class="product-price" data-title="Price">{{ element.produit.prixProduit }}€</td>
                                         <td class="product-quantity" data-title="Quantity">
                                             <div class="quantity">
                                                 <a href="{{ path('panier_delete',{ 'id':element.produit.id }) }}" type="button" value="-" class="minus">
-                                                    <svg xmlns="http://www.w3.org/2000/svg" width="16" height="16" fill="currentColor" class="bi bi-dash" viewBox="0 0 16 16">
+                                                    <svg xmlns="http://www.w3.org/2000/svg" width="16" height="16" fill="currentColor" class="bi bi-dash btn-badge" viewBox="0 0 16 16">
                                                         <path d="M4 8a.5.5 0 0 1 .5-.5h7a.5.5 0 0 1 0 1h-7A.5.5 0 0 1 4 8z"/>
                                                     </svg>
                                                 </a>
                                                 <input type="text" name="quantity" title="Qty" value="{{ element.quantite }}" class="qty" size="4">
                                                 <a href="{{ path('panier_add',{ 'id':element.produit.id }) }}" type="button" value="+" class="plus">
-                                                    <svg xmlns="http://www.w3.org/2000/svg" width="16" height="16" fill="currentColor" class="bi bi-plus" viewBox="0 0 16 16">
+                                                    <svg xmlns="http://www.w3.org/2000/svg" width="16" height="16" fill="currentColor" class="bi bi-plus btn-badge" viewBox="0 0 16 16">
                                                         <path d="M8 4a.5.5 0 0 1 .5.5v3h3a.5.5 0 0 1 0 1h-3v3a.5.5 0 0 1-1 0v-3h-3a.5.5 0 0 1 0-1h3v-3A.5.5 0 0 1 8 4z"/>
                                                     </svg>
                                                 </a>
@@ -46,7 +46,7 @@
                                         <td class="product-subtotal" data-title="Total">{{ element.produit.prixProduit * element.quantite }}€</td>
                                         <td class="product-remove" data-title="Remove">
                                             <a href="{{ path('panier_delete_all',{'id':element.produit.id}) }}">
-                                                <svg xmlns="http://www.w3.org/2000/svg" width="16" height="16" fill="currentColor" class="bi bi-x" viewBox="0 0 16 16">
+                                                <svg xmlns="http://www.w3.org/2000/svg" width="16" height="16" fill="currentColor" class="bi bi-x btn-badge" viewBox="0 0 16 16">
                                                     <path d="M4.646 4.646a.5.5 0 0 1 .708 0L8 7.293l2.646-2.647a.5.5 0 0 1 .708.708L8.707 8l2.647 2.646a.5.5 0 0 1-.708.708L8 8.707l-2.646 2.647a.5.5 0 0 1-.708-.708L7.293 8 4.646 5.354a.5.5 0 0 1 0-.708z"/>
                                                 </svg>
                                             </a>
@@ -77,27 +77,27 @@
                 <div class="col-md-6 ">
                     <div class="p-3 p-md-4 check-panier">
                         <div class="heading_s1 mb-3">
-                            <h6 class="text-panier">Panier Total</h6>
+                            <h6 class="text-panier-h1">Panier Total</h6>
                         </div>
                         <div class="table-responsive">
                             <table class="table">
                                 <tbody>
                                 <tr>
-                                    <td class="cart_total_label text-panier">Total HT</td>
+                                    <td class="cart_total_label text-panier-h1">Total HT</td>
                                     <td class="cart_total_amount text-panier">{{ panier.data.prixPanier *0.80 }}€</td>
                                 </tr>
                                 <tr>
-                                    <td class="cart_total_label text-panier">Shipping</td>
-                                    <td class="cart_total_amount text-panier">Free Shipping</td>
+                                    <td class="cart_total_label text-panier-h1">Frais de port</td>
+                                    <td class="cart_total_amount text-panier">Gratuit</td>
                                 </tr>
                                 <tr >
-                                    <td class="cart_total_label text-panier">Total TTC</td>
+                                    <td class="cart_total_label text-panier-h1">Total TTC</td>
                                     <td class="cart_total_amount text-panier"><strong>{{ panier.data.prixPanier }}</strong></td>
                                 </tr>
                                 </tbody>
                             </table>
                         </div>
-                        <a href="{{ path('checkout') }}" class=" btn-fill-out text-panier">Proceed To CheckOut</a>
+                        <a class="button" id="btnregisterlogin" href="{{ path('checkout') }}" >Procéder au payement</a>
                     </div>
                 </div>
             </div>

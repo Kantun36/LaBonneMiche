@@ -40,13 +40,22 @@ body {
 }
 
 #dropdown-menu{
-  background-color: #e3b364;
+  background-color:rgba(0,0,0,0.9);
+  width: 130%;
 }
 
 footer{
   background: black;
 }
 
+.href-top{
+  color: black;
+  font-weight: bold;
+}
+
+.href-top:hover{
+  color: #e3b364;
+}
 h5{
   color: #e3b364;
 }
@@ -242,13 +251,7 @@ h5{
       transform-origin: right;
     }
     &:nth-child(2) {
-      top: 0;
-      top: 0;
-      left: 0;
-      left: 0;
       transform: scale(0);
-      transform: scale(0);
-      transform-origin: right;
       transform-origin: right;
     }
     &:nth-child(4) {
@@ -290,6 +293,36 @@ h5{
   }
 }
 
+
+
+#drop-header{
+  color : #e3b364;
+  font-weight : bold;
+  padding-right : 30%;
+}
+
+#drop-header:hover{
+  color : black;
+  background: #e3b364;
+}
+
+
+
+#drop-headers{
+  color : #e3b364;
+  margin-right: 90%;
+  padding-right: 30%;
+}
+
+#drop-headers:hover{
+  color :black;
+  margin-right: 90%;
+
+  background: #e3b364;
+}
+
+
+
 .BonjourHome{
   background : transparent;
   color : #e3b364;
@@ -316,6 +349,7 @@ h5{
   border-style: none;
   color: black;
   background: rgba(227,179,100,0.7);
+  font-weight: bold;
 }
 
 #btnregisterlogin:hover{
@@ -573,6 +607,8 @@ h5{
 #tltphare{
   color: black;
   font-weight: bold;
+  text-align : center;
+
 
 
 }
@@ -600,9 +636,10 @@ h5{
 }
 
 .caroustext{
-  margin-top : 20%;
-  margin-right: 30%;
-  margin-left:15%;
+  margin-top : 10%;
+  margin-right: 20%;
+  margin-left:10%;
+  margin-bottom: 10%;
   text-align: center;
   font-size : 200%;
 
@@ -750,6 +787,9 @@ nav {
   white-space: nowrap;
 }
 
+.btn-badge{
+  color: #e3b364;
+}
 .shopping-cart {
   margin: 20px 0;
   float: right;
@@ -822,7 +862,7 @@ nav {
 
 
 .cart-icon {
-  color: #515783;
+  color: black;
   font-size: 24px;
   margin-right: 7px;
   float: left;
@@ -854,6 +894,11 @@ nav {
   color: #e3b364;
   border-color: #e3b364;
 }
+.text-panier-h1{
+  color: #e3b364;
+  border-color: #e3b364;
+  font-weight: bold;
+}
 
 .body-panier{
   background : rgba(224,205,165,0.627) ;
@@ -862,8 +907,56 @@ nav {
   background : rgba(0,0,0,0.9);
   margin: 10%;
   margin-bottom: 100%;
+  border-radius: 0.25rem;
 }
 
 .bouton-panier{
   margin-top : 40%;
+}
+
+.card-panier{
+  background: rgba(0,0,0,0.9);
+  border-radius: 0.25rem;
+}
+
+.card-title{
+  color : #e3b364;
+  font-weight: bold;
+}
+
+.card-text{
+  color : #e3b364;
+}
+
+.card-description{
+  color: $light-text;
+}
+
+.card-title-produit{
+  font-size : 200%;
+}
+
+.card-categorie{
+  font-size : 120%;
+}
+
+#btn-panier-acheter {
+  width: 30%;
+  border-style: none;
+  color: black;
+  background: rgba(227,179,100,0.7);
+  font-weight: bold;
+}
+
+.btn-panier-produit{
+  background: rgba(227,179,100,0.7);
+}
+
+.btn-panier-produit:hover{
+  background: #e3b364;
+}
+
+
+.btn-back-produit{
+  margin-left: 80%;
 }
