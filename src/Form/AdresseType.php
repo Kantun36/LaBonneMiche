@@ -4,6 +4,7 @@ namespace App\Form;
 
 use App\Entity\Adresse;
 use Symfony\Component\Form\AbstractType;
+use Symfony\Component\Form\Extension\Core\Type\CountryType;
 use Symfony\Component\Form\FormBuilderInterface;
 use Symfony\Component\OptionsResolver\OptionsResolver;
 
@@ -18,7 +19,7 @@ class AdresseType extends AbstractType
             ->add('complementAdresse')
             ->add('ville')
             ->add('codePostal')
-            ->add('pays')
+            ->add('pays',CountryType::class)
         ;
     }
 

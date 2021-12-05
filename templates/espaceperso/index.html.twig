@@ -15,10 +15,10 @@
             <div class="col-lg-12 vertab-container">
                 <div class="col-lg-3 col-md-3 col-sm-3  vertab-menu">
                     <div class="list-group">
-                        <a href="#" class="list-group-item text-left"> Mon compte </a>
-                        <a href="#" class="list-group-item text-left"> Mes commandes </a>
-                        <a href="#" class="list-group-item text-left"> Mon adresse </a>
-                        <a href="#" class="list-group-item text-left"> Mes informations </a>
+                        <a href="#" class="list-group-item "> Mon compte </a>
+                        <a href="#" class="list-group-item "> Mes commandes </a>
+                        <a href="#" class="list-group-item "> Mon adresse </a>
+                        <a href="#" class="list-group-item "> Mes informations </a>
                     </div>
                 </div>
                 <div id="accordion" class="col-lg-9 col-md-9 col-sm-9 col-xs-12 vertab-accordion panel-group">
@@ -28,7 +28,7 @@
                                 Mon Compte
                             </h4>
                         </div>
-                        <div id="collapse1" class="panel-collapse collapse">
+                        <div id="collapse1" class="panel-collapse collapse col-lg-6 col-md-6 col-sm-6 col-xs-6 ">
                             <div class="panel-body">
                                 <div class="card">
                                     <div class="card-header">
@@ -89,29 +89,20 @@
                         <div id="collapse3" class="panel-collapse collapse">
                             <div class="panel-body">
                                 <div class="row">
-                                    <div class="col-lg-12">
-                                        <a href="#" class="btn btn-fill-out mb-3">Add new address</a>
-                                    </div>
-                                </div>
-                                <div class="row">
                                     {% if app.user.adresse %}
-                                        {% set index = 0 %}
-                                        {% for addresse in app.user.adresse %}
-                                            {% set index = index +1 %}
                                             <div class="col-lg-6">
                                                 <div class="card mb-3 mb-lg-0">
                                                     <div class="card-header">
-                                                        <h3> Your Address # </h3>
+                                                        <h3> Your Address  </h3>
                                                     </div>
                                                     <div class="card-body">
-                                                        <address> {{ addresse }}<br>
-                                                            {{ addresse.nom }} <br>
-                                                            {{ addresse.complementAdresse }} <br>
-                                                            {{ addresse.ville }} <br>
-                                                            {{ addresse.codePostal }}<br>
-                                                            {{ addresse.pays }}
 
-                                                        </address>
+                                                            {{ app.user.adresse.nom }}
+                                                            {{ app.user.adresse.complementAdresse }}
+                                                            {{ app.user.adresse.ville }}
+                                                            {{ app.user.adresse.codePostal }}
+                                                            {{ app.user.adresse.pays }}
+
                                                         <div class="btn-group">
                                                             <a href="#" class="btn btn-success">Edit</a>
                                                         </div>
@@ -119,9 +110,9 @@
                                                     </div>
                                                 </div>
                                             </div>
-                                        {% endfor %}
                                     {% else %}
-                                        <p>Sorry you haven't added an address to your account yet !</p>
+                                        <a href="#" class="btn btn-fill-out mb-3">Ajouter une nouvelle adresse</a>
+                                        <p>Desole mais vous ne possédez pas encore d'adresse !</p>
                                     {% endif %}
 
                                 </div>

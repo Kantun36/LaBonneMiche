@@ -5,6 +5,7 @@ namespace App\Controller;
 use App\Entity\Adresse;
 use App\Form\AdresseType;
 use App\Repository\AdresseRepository;
+use App\Services\PanierServices;
 use Doctrine\ORM\EntityManagerInterface;
 use Symfony\Bundle\FrameworkBundle\Controller\AbstractController;
 use Symfony\Component\HttpFoundation\Request;
@@ -29,17 +30,23 @@ class AdresseController extends AbstractController
     /**
      * @Route("/new", name="adresse_new", methods={"GET", "POST"})
      */
-    public function new(Request $request, EntityManagerInterface $entityManager): Response
+    public function new(Request $request, EntityManagerInterface $entityManager,PanierServices $panierServices): Response
     {
         $adresse = new Adresse();
         $form = $this->createForm(AdresseType::class, $adresse);
         $form->handleRequest($request);
 
         if ($form->isSubmitted() && $form->isValid()) {
+            $user = $this->getUser();
+            $adresse->setUserAdresse($user);
             $entityManager->persist($adresse);
             $entityManager->flush();
 
-            return $this->redirectToRoute('adresse_index', [], Response::HTTP_SEE_OTHER);
+            if($panierServices->getFullPanier()){
+                return $this->redirectToRoute('checkout');
+            }
+
+            return $this->redirectToRoute('espaceperso');
         }
 
         return $this->renderForm('adresse/new.html.twig', [

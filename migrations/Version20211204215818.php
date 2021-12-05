@@ -23,7 +23,6 @@ final class Version20211204215818 extends AbstractMigration
         $this->addSql('ALTER TABLE adresse DROP FOREIGN KEY FK_C35F0816EA801AB0');
         $this->addSql('DROP INDEX UNIQ_C35F0816EA801AB0 ON adresse');
         $this->addSql('ALTER TABLE adresse DROP user_adresse_id, CHANGE adresse adresse VARCHAR(255) NOT NULL, CHANGE complement_adresse complement_adresse VARCHAR(255) DEFAULT NULL');
-        $this->addSql('ALTER TABLE article CHANGE contenu contenu VARCHAR(255) NOT NULL');
         $this->addSql('ALTER TABLE commande ADD id_commande INT NOT NULL');
     }
 

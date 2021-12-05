@@ -5,16 +5,24 @@
 {% block body %}
     <div class="section checkout">
         <div class="container">
-
             <div class="row">
                 <div class="col-md-6">
                     <div class="heading_s1">
                         <h4>Your delivery Address</h4>
 
                         <div class="content">
-
+                            {% if app.user.adresse %}
+                                {{ app.user.adresse.nom }} </br>
+                                {{ app.user.adresse.complementAdresse }} </br>
+                                {{ app.user.adresse.ville }} </br>
+                                {{ app.user.adresse.codePostal }} </br>
+                                {{ app.user.adresse.pays }} </br>
+                                <a href="{{ path('adresse_edit',{'id': app.user.adresse.id })}}" class="btn btn-fill-out btn-block mt-1">Modifier l'adresse</a>
+                            {% else %}
+                                <a href="{{ path('adresse_new')}}" class="btn btn-fill-out btn-block mt-1">Ajouter une adresse</a>
+                            {% endif %}
                         </div>
-                        <a href="{{ path('adresse_new')}}" class="btn btn-fill-out btn-block mt-1">Add new address</a>
+
                     </div>
 
                 <div class="col-md-6">
@@ -62,11 +70,13 @@
                         </div>
                         <div class="payment_method">
                             <div class="heading_s1">
-                                <h4>Payment</h4>
+                                <h4>Payement</h4>
                             </div>
 
                         </div>
-                        <button type="submit" id="checkout-button" class="btn btn-fill-out btn-block">Place Order</button>
+                        <button type="submit" id="checkout-button" class="btn btn-fill-out btn-block">
+                            Payer
+                        </button>
                     </div>
                 </div>
             </div>
