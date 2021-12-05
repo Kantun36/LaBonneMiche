@@ -76,6 +76,11 @@ class User implements UserInterface, PasswordAuthenticatedUserInterface
      */
     private $commandes;
 
+    /**
+     * @ORM\OneToOne(targetEntity=Adresse::class, mappedBy="userAdresse", cascade={"persist", "remove"})
+     */
+    private $adresse;
+
     public function getId(): ?int
     {
         return $this->id;
@@ -251,6 +256,28 @@ class User implements UserInterface, PasswordAuthenticatedUserInterface
                 $commande->setUserCommande(null);
             }
         }
+
+        return $this;
+    }
+
+    public function getAdresse(): ?Adresse
+    {
+        return $this->adresse;
+    }
+
+    public function setAdresse(?Adresse $adresse): self
+    {
+        // unset the owning side of the relation if necessary
+        if ($adresse === null && $this->adresse !== null) {
+            $this->adresse->setUserAdresse(null);
+        }
+
+        // set the owning side of the relation if necessary
+        if ($adresse !== null && $adresse->getUserAdresse() !== $this) {
+            $adresse->setUserAdresse($this);
+        }
+
+        $this->adresse = $adresse;
 
         return $this;
     }
