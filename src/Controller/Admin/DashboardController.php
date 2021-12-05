@@ -9,6 +9,7 @@ use App\Entity\Ingredient;
 use App\Entity\Paragraphe;
 use App\Entity\Produit;
 use App\Entity\Contact;
+use App\Entity\Franchise;
 use EasyCorp\Bundle\EasyAdminBundle\Config\Dashboard;
 use EasyCorp\Bundle\EasyAdminBundle\Config\MenuItem;
 use EasyCorp\Bundle\EasyAdminBundle\Controller\AbstractDashboardController;
@@ -42,6 +43,7 @@ class DashboardController extends AbstractDashboardController
                 yield MenuItem::linkToCrud('Paragraphe', ' fas fa-bread-slice', Paragraphe::class);
                 yield MenuItem::linkToCrud('Commentaire', ' fas fa-bread-slice', Commentaire::class);
                 yield MenuItem::linkToCrud('Contact', ' fas fa-bread-slice', Contact::class);
+                yield MenuItem::linkToCrud('Franchise', ' fas fa-bread-slice', Franchise::class);
                 yield MenuItem::linkToLogout('Logout', 'fa fa-exit');
     }
 }

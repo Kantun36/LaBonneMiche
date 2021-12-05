@@ -1,0 +1,30 @@
+{% extends 'base.html.twig' %}
+
+{% block title %}Franchise index{% endblock %}
+
+{% block body %}<br><br><br><br>
+    <h1>Franchise index</h1>
+
+    <table class="table">
+
+        <tbody>
+        {% for franchise in franchises %}
+            <tr>
+                <td>{{ franchise.id }}</td>
+                <td>{{ franchise.RaisonFranchise }}</td>
+                <td>{{ franchise.TextFranchise }}</td>
+                <td>
+                    <a href="{{ path('franchise_show', {'id': franchise.id}) }}">show</a>
+                    <a href="{{ path('franchise_edit', {'id': franchise.id}) }}">edit</a>
+                </td>
+            </tr>
+        {% else %}
+            <tr>
+                <td colspan="5">no records found</td>
+            </tr>
+        {% endfor %}
+        </tbody>
+    </table>
+
+    <a href="{{ path('franchise_new') }}">Create new</a>
+{% endblock %}

@@ -48,4 +48,10 @@ class HomeController extends AbstractController
         return $this-> render('engagements/index.html.twig' , ['controller_name' => 'HomeController',
         ]);
     }
+
+    public function franchise(): Response
+    {
+        return $this-> render('franchise/index.html.twig' , ['controller_name' => 'HomeController',
+        ]);
+    }
 }

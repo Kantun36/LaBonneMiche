@@ -1,0 +1,42 @@
+{% extends 'base.html.twig' %}
+
+{% block title %}Contact{% endblock %}
+
+{% block body %}
+    <h1>Contact</h1>
+
+    <table class="table">
+        <tbody>
+        <tr>
+            <th>Id</th>
+            <td>{{ franchise.id }}</td>
+        </tr>
+        <tr>
+            <th>Nom</th>
+            <td>{{ franchise.NomFranchise }}</td>
+        </tr>
+        <tr>
+            <th>Prenom</th>
+            <td>{{ franchise.PrenomFranchise }}</td>
+        </tr>
+        <tr>
+            <th>Mail</th>
+            <td>{{ franchise.MailFranchise }}</td>
+        </tr>
+        <tr>
+            <th>RaisonFranchise</th>
+            <td>{{ franchise.RaisonFranchise }}</td>
+        </tr>
+        <tr>
+            <th>TextFranchise</th>
+            <td>{{ franchise.TextFranchise }}</td>
+        </tr>
+        </tbody>
+    </table>
+
+    <a href="{{ path('franchise_index') }}">back to list</a>
+
+    <a href="{{ path('franchise_edit', {'id': franchise.id}) }}">edit</a>
+
+    {{ include('franchise/_delete_form.html.twig') }}
+{% endblock %}

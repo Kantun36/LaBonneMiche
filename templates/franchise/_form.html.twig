@@ -1,0 +1,159 @@
+{# {{ form_start(form) }}
+    {{ form_widget(form) }}
+    <button class="btn">{{ button_label|default('Save') }}</button>
+{{ form_end(form) }} #}
+
+<!doctype html>
+</head>
+<body>
+
+<div class="bodyhome">
+    <div class="content ">
+
+        <div class="container">
+
+                <form class="mb-5" method="post" id="franchiseForm" name="franchiseForm">
+                    {{ form_start(franchise) }}
+                    <div class="row">
+
+                <div class="col-12 ">
+                    <h3 class="text-center">Qui etes vous ?</h3>
+
+                        <div class="row">
+                            <div class="col-md-6 form-group mb-3">
+                                <label for="" class="col-form-label"  style="color: black">Sexe *</label>
+                                {{ form_widget(franchise.Sexe, {'attr': {'placeholder': 'Votre sexe',
+                                    'class': 'form-control', 'required': 'true'}}) }}
+                            </div>
+                            <div class="col-md-6 form-group mb-3">
+                                <label for="" class="col-form-label" style="color: black">Telephone *</label>
+                                {{ form_widget(franchise.TelephoneFranchise, {'attr': {'placeholder': 'Téléphone',
+                                    'class': 'form-control', 'required': 'true'}}) }}
+                            </div>
+                        </div>
+                        {% if app.user %}
+                            <div class="row">
+                                <div class="col-md-6 form-group mb-3">
+                                    <label for="" class="col-form-label"  style="color: black">Prénom *</label>
+                                    {{ form_widget(franchise.PrenomFranchise, {'attr': {'placeholder': 'Votre prénom',
+                                        'class': 'form-control', 'required': 'true', 'value': app.user.PrenomUser}}) }}
+                                </div>
+                                <div class="col-md-6 form-group mb-3">
+                                    <label for="" class="col-form-label" style="color: black">Nom *</label>
+                                    {{ form_widget(franchise.NomFranchise, {'attr': {'placeholder': 'Votre nom',
+                                        'class': 'form-control', 'required': 'true', 'value': app.user.NomUser}}) }}
+                                </div>
+                            </div>
+
+                        {% else %}
+                            <div class="row">
+                                <div class="col-md-6 form-group mb-3">
+                                    <label for="" class="col-form-label"  style="color: black">Prénom *</label>
+                                    {{ form_widget(franchise.PrenomFranchise, {'attr': {'placeholder': 'Votre prénom',
+                                        'class': 'form-control', 'required': 'true'}}) }}
+                                </div>
+                                <div class="col-md-6 form-group mb-3">
+                                    <label for="" class="col-form-label" style="color: black">Nom *</label>
+                                    {{ form_widget(franchise.NomFranchise, {'attr': {'placeholder': 'Votre nom',
+                                        'class': 'form-control', 'required': 'true'}}) }}
+                                </div>
+                            </div>
+
+                        {% endif %}
+                        <div class="row">
+                            {% if app.user %}
+                                <div class="col-md-6 form-group mb-3">
+                                    <label for="" class="col-form-label" style="color: black">Email *</label>
+                                    {{ form_widget(franchise.AdresseFranchise, {'attr': {'placeholder': 'Votre email',
+                                        'class': 'form-control', 'required': 'true', 'value': app.user.email }}) }}                                        </div>
+                            {% else %}
+                            <div class="col-md-6 form-group mb-3">
+                                <label for="" class="col-form-label" style="color: black">Email *</label>
+                                {{ form_widget(franchise.AdresseFranchise, {'attr': {'placeholder': 'Votre email',
+                                    'class': 'form-control', 'required': 'true'}}) }}                                        </div>
+                            {% endif %}
+
+                        </div>
+
+                        <div class="row">
+                            <div class="col-md-3 form-group mb-3">
+                                <label for="budget" class="col-form-label" style="color: black">Postal *</label>
+                                {{ form_widget(franchise.PostalFranchise, {'attr': {'placeholder': 'Code postale',
+                                    'class': 'form-control', 'required': 'true'}}) }}
+                            </div>
+                            <div class="col-md-3 form-group mb-3">
+                                <label for="budget" class="col-form-label" style="color: black">Ville *</label>
+                                {{ form_widget(franchise.VilleFranchise, {'attr': {'placeholder': 'Ville',
+                                    'class': 'form-control', 'required': 'true'}}) }}
+                            </div>
+                            <div class="col-md-6 form-group mb-3">
+                                <label for="" class="col-form-label" style="color: black">Pays *</label>
+                                {{ form_widget(franchise.PaysFranchise, {'attr': {'placeholder': 'Pays',
+                                    'class': 'form-control', 'required': 'true'}}) }}
+                            </div>
+                        </div>
+
+
+
+
+
+
+
+                </div>
+
+            </div>
+
+            <div class="col-12">
+                <h3 class="text-center">Votre projet</h3>
+                <div class="row">
+                    <div class="col-md-12 form-group mb-3">
+                        <label for="budget" class="col-form-label" style="color: black">Type *</label>
+                        {{ form_widget(franchise.TypeFranchise, {'attr': {'placeholder': 'Type de partenariat',
+                            'class': 'form-control', 'required': 'true'}}) }}
+                    </div>
+                </div>
+                <div class="row">
+                    <div class="col-md-6 form-group mb-3">
+                        <label for="budget" class="col-form-label" style="color: black">PaysProjet *</label>
+                        {{ form_widget(franchise.PaysProjetFranchise, {'attr': {'placeholder': 'Pays',
+                            'class': 'form-control', 'required': 'true'}}) }}
+                    </div>
+                    <div class="col-md-6 form-group mb-3">
+                        <label for="budget" class="col-form-label" style="color: black">Region *</label>
+                        {{ form_widget(franchise.RegionFranchise, {'attr': {'placeholder': 'Region et/ou ville',
+                            'class': 'form-control', 'required': 'true'}}) }}
+                    </div>
+                </div>
+                <div class="row">
+                    <div class="col-md-12 form-group mb-3">
+                        <label for="budget" class="col-form-label" style="color: black">Info *</label>
+                        {{ form_widget(franchise.InfoFranchise, {'attr': {'placeholder': 'Informations importantes',
+                            'class': 'form-control', 'required': 'true'}}) }}
+                    </div>
+                </div>
+                <div class="row">
+                    <div class="col-md-12 form-group mb-3">
+                        <label for="budget" class="col-form-label" style="color: black">Raison *</label>
+                        {{ form_widget(franchise.RaisonFranchise, {'attr': {'placeholder': 'Raison',
+                            'class': 'form-control', 'required': 'true'}}) }}
+                    </div>
+                </div>
+                <div class="row justify-content-center">
+                    <div class="col-md-5 form-group text-center">
+                        <input type="submit" value="Envoyer" id="btnregisterlogin" class="btn  ">
+                        <span class="submitting"></span>
+                    </div>
+                </div>
+            {{ form_end(franchise) }}
+            </form>
+
+        </div>
+            </div>
+
+    </div>
+
+</div>
+
+
+</body>
+</html>
