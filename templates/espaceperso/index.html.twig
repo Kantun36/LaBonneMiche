@@ -4,9 +4,7 @@
 
 {% block body %}
 <div class="bodyhome pt-3 pb-3">
-    {% if is_granted('ROLE_ADMIN') %}
-        <a href="/admin"  class="button" id="btn-panier-acheter">Accéder à l'espace admin</a>
-    {% endif %}
+
 
 
 
@@ -15,11 +13,16 @@
             <div class="col-lg-12 vertab-container">
                 <div class="col-lg-3 col-md-3 col-sm-3  vertab-menu">
                     <div class="list-group">
+
+
                         <a href="#" class="list-group-item text-left"> Mon compte </a>
                         <a href="#" class="list-group-item text-left"> Mes commandes </a>
                         <a href="#" class="list-group-item text-left"> Mon adresse </a>
                         <a href="#" class="list-group-item text-left"> Mes informations </a>
-                        <a href="/logout" class="list-group-item text-left"> Se déconnecter </a>
+                        {% if is_granted('ROLE_ADMIN') %}
+                            <a onclick="location.href='/admin'" class="list-group-item text-left">Accéder à l'espace admin</a>
+                        {% endif %}
+                        <a onclick="location.href='/logout'" class="list-group-item text-left"> Se déconnecter </a>
                     </div>
                 </div>
                 <div id="accordion" class="col-lg-9 col-md-9 col-sm-9 col-xs-12 vertab-accordion panel-group">
@@ -91,7 +94,7 @@
                                         <h3>Adresse</h3>
                                     </div>
                                     <div class="card-body" id="espace-body">
-                                        <a href="/admin"  class="button" id="btn-panier-acheter">Ajouter une nouvelle adresse</a>
+                                        <a href="/adresse/new"  class="button" id="btn-panier-acheter">Ajouter une nouvelle adresse</a>
                                         <div class="row">
                                             {% if app.user.adresse %}
                                                 {% set index = 0 %}

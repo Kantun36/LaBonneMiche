@@ -13,17 +13,7 @@ class HomeController extends AbstractController
             ]);
     }
 
-    public function produits(): Response
-    {
-        return $this-> render('produit/index.html.twig' , ['controller_name' => 'ProduitController',
-        ]);
-    }
 
-    public function actualite(): Response
-    {
-        return $this-> render('article/index.html.twig' , ['controller_name' => 'ArticleController',
-        ]);
-    }
 
     public function histoire(): Response
     {
@@ -31,11 +21,7 @@ class HomeController extends AbstractController
         ]);
     }
 
-    public function contact(): Response
-    {
-        return $this-> render('contact/new.html.twig' , ['controller_name' => 'HomeController',
-        ]);
-    }
+
 
     public function cgu(): Response
     {
@@ -49,9 +35,5 @@ class HomeController extends AbstractController
         ]);
     }
 
-    public function franchise(): Response
-    {
-        return $this-> render('franchise/index.html.twig' , ['controller_name' => 'HomeController',
-        ]);
-    }
+
 }

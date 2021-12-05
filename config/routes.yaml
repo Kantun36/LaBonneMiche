@@ -4,7 +4,7 @@ index:
 
 produits:
     path: /produits
-    controller : App\Controller\HomeController::produits
+    controller : App\Controller\ProduitController::index
 
 actualite:
     path: /actualite
@@ -16,7 +16,7 @@ histoire:
 
 contact:
     path: /contact/new
-    controller : App\Controller\HomeController::contact
+    controller : App\Controller\ContactController::new
 
 app_login:
     path: /login
@@ -52,4 +52,4 @@ engagements:
 
 franchise:
     path: /franchise/new
-    controller : App\Controller\HomeController::franchise
+    controller : App\Controller\FranchiseController::new
