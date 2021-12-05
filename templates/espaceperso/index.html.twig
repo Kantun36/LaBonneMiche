@@ -94,38 +94,34 @@
                                         <h3>Adresse</h3>
                                     </div>
                                     <div class="card-body" id="espace-body">
-                                        <a href="/adresse/new"  class="button" id="btn-panier-acheter">Ajouter une nouvelle adresse</a>
+
                                         <div class="row">
+
                                             {% if app.user.adresse %}
-                                                {% set index = 0 %}
-                                                {% for addresse in app.user.adresse %}
-                                                    {% set index = index +1 %}
-                                                    <div class="col-lg-6">
-                                                        <div class="card mb-3 mb-lg-0">
-                                                            <div class="card-header">
-                                                                <h3> Votre adresse </h3>
-                                                            </div>
-                                                            <div class="card-body">
-                                                                <address> {{ addresse }}<br>
-                                                                    {{ addresse.nom }} <br>
-                                                                    {{ addresse.complementAdresse }} <br>
-                                                                    {{ addresse.ville }} <br>
-                                                                    {{ addresse.codePostal }}<br>
-                                                                    {{ addresse.pays }}
+                                                <div class="col-lg-6">
+                                                    <div class="card mb-3 mb-lg-0">
+                                                        <div class="card-header">
+                                                            <h3> Your Address  </h3>
+                                                        </div>
+                                                        <div class="card-body">
 
-                                                                </address>
-                                                                <div class="btn-group">
-                                                                    <a href="#" class="btn btn-success">Edit</a>
-                                                                </div>
+                                                            {{ app.user.adresse.nom }}
+                                                            {{ app.user.adresse.complementAdresse }}
+                                                            {{ app.user.adresse.ville }}
+                                                            {{ app.user.adresse.codePostal }}
+                                                            {{ app.user.adresse.pays }}
 
+                                                            <div class="btn-group">
+                                                                <a href="#" class="btn btn-success">Edit</a>
                                                             </div>
+
                                                         </div>
                                                     </div>
-                                                {% endfor %}
+                                                </div>
                                             {% else %}
+                                                <a href="/adresse/new"  class="button" id="btn-panier-acheter">Ajouter une nouvelle adresse</a>
                                                 <p>Désolé, vous n'avez pas encore d'adresse lié à votre compte.</p>
                                             {% endif %}
-
                                         </div>
                                     </div>
                                     </div>
