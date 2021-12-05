@@ -44,11 +44,11 @@ security:
 
 
     access_control:
-        - { path: ^/admin, roles: ROLE_ADMIN }
+        - {path: ^/admin, roles: ROLE_ADMIN }
         - {path : ^/contact/new, roles : ROLE_USER }
         - {path : ^/franchise/new, roles : ROLE_USER }
         - {path : ^/adresse/new, roles : ROLE_USER }
-        # - { path: ^/profile, roles: ROLE_USER }
-        # - { path: ^/checkout, roles: ROLE_USER }
-        # - { path: ^/espaceperso, roles: ROLE_USER }
+        - {path : ^/(article|commande|commentaire|image|paragraphe|ingredient|produits|user)/new, roles : ROLE_ADMIN }
+        - {path : ^/(contact|franchise|article|commande|commentaire|paragraphe|image|ingredient|produits|user)/edit, roles : ROLE_ADMIN }
+        - {path : ^/(contact|franchise|article|commande|commentaire|paragraphe|image|ingredient|produits|user)/delete, roles : ROLE_ADMIN }
 
