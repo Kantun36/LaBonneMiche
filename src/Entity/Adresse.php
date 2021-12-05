@@ -52,6 +52,12 @@ class Adresse
      */
     private $pays;
 
+    /**
+     * @ORM\OneToOne(targetEntity=User::class, inversedBy="adresse", cascade={"persist", "remove"})
+     */
+    private $userAdresse;
+
+
     public function getId(): ?int
     {
         return $this->id;
@@ -140,4 +146,17 @@ class Adresse
 
         return $this;
     }
+
+    public function getUserAdresse(): ?User
+    {
+        return $this->userAdresse;
+    }
+
+    public function setUserAdresse(?User $userAdresse): self
+    {
+        $this->userAdresse = $userAdresse;
+
+        return $this;
+    }
+    
 }
