@@ -13,65 +13,72 @@
         <div class="container">
             <div class="row align-items-stretch justify-content-center no-gutters">
                 <div class="col-md-7">
-                        <h3 class="text-center">Nous contacter !</h3>
-                        <form class="mb-5" method="post" id="contactForm" name="contactForm">
-                                {% if app.user %}
-                                <div class="row">
+                    <h3 class="text-center">Nous contacter !</h3>
+                    <form class="mb-5" method="post" id="contactForm" name="contactForm">
+                        {{ form_start(contact) }}
+                        {% if app.user %}
+                            <div class="row">
                                 <div class="col-md-6 form-group mb-3">
                                     <label for="" class="col-form-label"  style="color: black">Prénom *</label>
-                                    <input type="text" class="form-control" name="name" id="prenom" value="{{ app.user.PrenomUser }}" placeholder="Votre prénom" required="true">
+                                    {{ form_widget(contact.PrenomContact, {'attr': {'placeholder': 'Votre prénom',
+                                        'class': 'form-control', 'required': 'true', 'value': app.user.PrenomUser}}) }}
                                 </div>
                                 <div class="col-md-6 form-group mb-3">
                                     <label for="" class="col-form-label" style="color: black">Nom *</label>
-                                    <input type="text" class="form-control" name="name" id="nom" value="{{ app.user.NomUser }}"  placeholder="Votre nom" required="true">
+                                    {{ form_widget(contact.NomContact, {'attr': {'placeholder': 'Votre nom',
+                                        'class': 'form-control', 'required': 'true', 'value': app.user.NomUser}}) }}
                                 </div>
-                                </div>
-                                    <div  class="row">
-                                        <div class="col-md-12 form-group mb-3">
-                                            <label for="" class="col-form-label" style="color: black">Email *</label>
-                                            <input type="email" class="form-control" name="email" id="email" value="{{ app.user.email }}"placeholder="Votre email" required="true">
-                                        </div>
-                                    </div>
-                                {% else %}
-                            <div class="row">
-                                    <div class="col-md-6 form-group mb-3">
-                                        <label for="" class="col-form-label"  style="color: black">Prénom *</label>
-                                        <input type="text" class="form-control" name="name" id="prenom" placeholder="Votre prénom" required="true">
-                                    </div>
-                                    <div class="col-md-6 form-group mb-3">
-                                        <label for="" class="col-form-label" style="color: black">Nom *</label>
-                                        <input type="text" class="form-control" name="name" id="nom" placeholder="Votre nom" required="true">
-                                    </div>
                             </div>
-                                    <div  class="row">
-                                        <div class="col-md-12 form-group mb-3">
-                                            <label for="" class="col-form-label" style="color: black">Email *</label>
-                                            <input type="email" class="form-control" name="email" id="email" placeholder="Votre email" required="true">
-                                        </div>
-                                    </div>
-                                {% endif %}
-
-
-                            <div class="row">
+                            <div  class="row">
                                 <div class="col-md-12 form-group mb-3">
-                                    <label for="budget" class="col-form-label" style="color: black">Objet *</label>
-                                    <input type="text" class="form-control" name="subject" id="subject" placeholder="A quel sujet ?" required="true">
+                                    <label for="" class="col-form-label" style="color: black">Email *</label>
+                                    {{ form_widget(contact.MailContact, {'attr': {'placeholder': 'Votre email',
+                                        'class': 'form-control', 'required': 'true', 'value': app.user.email }}) }}                                        </div>
+                            </div>
+                        {% else %}
+                            <div class="row">
+                                <div class="col-md-6 form-group mb-3">
+                                    <label for="" class="col-form-label"  style="color: black">Prénom *</label>
+                                    {{ form_widget(contact.PrenomContact, {'attr': {'placeholder': 'Votre prénom',
+                                        'class': 'form-control', 'required': 'true'}}) }}
+                                </div>
+                                <div class="col-md-6 form-group mb-3">
+                                    <label for="" class="col-form-label" style="color: black">Nom *</label>
+                                    {{ form_widget(contact.NomContact, {'attr': {'placeholder': 'Votre nom',
+                                        'class': 'form-control', 'required': 'true'}}) }}
                                 </div>
                             </div>
-
-                            <div class="row mb-5">
+                            <div  class="row">
                                 <div class="col-md-12 form-group mb-3">
-                                    <label for="message" class="col-form-label" style="color: black">Message *</label>
-                                    <textarea class="form-control" name="message" id="message" style="height:100%;" cols="30" rows="4"  placeholder="Ecrivez votre message ici" required="true"></textarea>
-                                </div>
+                                    <label for="" class="col-form-label" style="color: black">Email *</label>
+                                    {{ form_widget(contact.MailContact, {'attr': {'placeholder': 'Votre email',
+                                        'class': 'form-control', 'required': 'true'}}) }}                                        </div>
                             </div>
-                            <div class="row justify-content-center">
-                                <div class="col-md-5 form-group text-center">
-                                    <input type="submit" value="Envoyer" id="btnregisterlogin" class="btn  ">
-                                    <span class="submitting"></span>
-                                </div>
+                        {% endif %}
+
+
+                        <div class="row">
+                            <div class="col-md-12 form-group mb-3">
+                                <label for="budget" class="col-form-label" style="color: black">Objet *</label>
+                                {{ form_widget(contact.RaisonContact, {'attr': {'placeholder': 'A quel sujet ?',
+                                    'class': 'form-control', 'required': 'true'}}) }}                                 </div>
+                        </div>
+
+                        <div class="row mb-5">
+                            <div class="col-md-12 form-group mb-3">
+                                <label for="message" class="col-form-label" style="color: black">Message *</label>
+                                {{ form_widget(contact.TextContact, {'attr': {'placeholder': 'Ecrivez votre message ici',
+                                    'class': 'form-control', 'required': 'true'}}) }}
                             </div>
-                        </form>
+                        </div>
+                        <div class="row justify-content-center">
+                            <div class="col-md-5 form-group text-center">
+                                <input type="submit" value="Envoyer" id="btnregisterlogin" class="btn  ">
+                                <span class="submitting"></span>
+                            </div>
+                        </div>
+                        {{ form_end(contact) }}
+                    </form>
 
 
                 </div>

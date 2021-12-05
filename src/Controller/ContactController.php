@@ -39,12 +39,11 @@ class ContactController extends AbstractController
             $entityManager->persist($contact);
             $entityManager->flush();
 
-            return $this->redirectToRoute('contact_index', [], Response::HTTP_SEE_OTHER);
+            return $this->redirectToRoute('contact_new', [], Response::HTTP_SEE_OTHER);
         }
 
-        return $this->renderForm('contact/new.html.twig', [
-            'contact' => $contact,
-            'form' => $form,
+        return $this->render('contact/new.html.twig', [
+            'contact' => $form->createView(),
         ]);
     }
 
@@ -68,8 +67,8 @@ class ContactController extends AbstractController
 
         if ($form->isSubmitted() && $form->isValid()) {
             $this->getDoctrine()->getManager()->flush();
-
             return $this->redirectToRoute('contact_index', [], Response::HTTP_SEE_OTHER);
+
         }
 
         return $this->renderForm('contact/edit.html.twig', [

@@ -3,51 +3,36 @@
 {% block title %}Article{% endblock %}
 
 {% block body %}
-    <h1>Article</h1>
+<div class="bodyhome pt-5 pb-5">
+    <div class="article-body-2 m-5">
+    <div class="col-12">
+        <div id="titlephare">
+            <h1 class="article-h2">{{ article.Titre }}</h1>
 
-    <table class="table">
-        <tbody>
-            <tr>
-                <th>Id</th>
-                <td>{{ article.id }}</td>
-            </tr>
-            <tr>
-                <th>Titre</th>
-                <td>{{ article.Titre }}</td>
-            </tr>
-            <tr>
-                <th>Contenu</th>
-                <td>{{ article.Contenu|raw }}</td>
-            </tr>
-            <tr>
-                <th>Contenu</th>
-                <td>
-                </td>
-            <tr>
-                    {% for paragraphe in article.paragraphes %}
-                <th>Paragraphe numero {{ paragraphe.numeroParagraphe }}</th>
-                <td>
-                        <div class="container">
-                            <div class="title h3 ">
-                                {{ paragraphe.titreParagraphe }}
-                            </div>
-                            <div class="text">
-                                {{ paragraphe.contenuParagraphe|raw }}
-                            </div>
-                        </div>
-                </td>
-            </tr>
-                    {% endfor %}
+        </div>
+        <div class="article-p col-12">
+            <p >{{ article.Contenu|raw }}</p>
+        </div>
+        {% for paragraphe in article.paragraphes %}
+        <div class="col-12 ">
+            <h2 class="article-h2">{{ paragraphe.titreParagraphe }}  {{ paragraphe.titreParagraphe }}</h2>
+        </div>
+        <div class="article-p col-12">
+            <p>{{ paragraphe.contenuParagraphe|raw }}</p>
+        </div>
+        {% endfor %}
+    </div>
 
 
-        </tbody>
-    </table>
+        <a href="{{ path('article_index') }}" class="button btn-article">Revenir aux articles</a>
+
+    </div>
+    {% if is_granted('ROLE_ADMIN') %}
+        <a href="{{ path('article_edit', {'id': article.id}) }}" class="button m-3" id="btn-article-create">Modifier l'article</a>
+        {{ include('article/_delete_form.html.twig') }}
+    {% endif %}
+</div>
 
 
 
-    <a href="{{ path('article_index') }}">back to list</a>
-
-    <a href="{{ path('article_edit', {'id': article.id}) }}">edit</a>
-
-    {{ include('article/_delete_form.html.twig') }}
 {% endblock %}
