@@ -97,13 +97,14 @@
 
                                         <div class="row">
 
+
                                             {% if app.user.adresse %}
                                                 <div class="col-lg-6">
                                                     <div class="card mb-3 mb-lg-0">
-                                                        <div class="card-header">
+                                                        <div class="card-header "id="espace-header">
                                                             <h3> Your Address  </h3>
                                                         </div>
-                                                        <div class="card-body">
+                                                        <div class="card-body " id="espace-body">
 
                                                             {{ app.user.adresse.nom }}
                                                             {{ app.user.adresse.complementAdresse }}
@@ -112,15 +113,15 @@
                                                             {{ app.user.adresse.pays }}
 
                                                             <div class="btn-group">
-                                                                <a href="#" class="btn btn-success">Edit</a>
+                                                                <a href="adresse/edit" class="button" id="btnregisterlogin">Modifier</a>
                                                             </div>
 
                                                         </div>
                                                     </div>
                                                 </div>
                                             {% else %}
-                                                <a href="/adresse/new"  class="button" id="btn-panier-acheter">Ajouter une nouvelle adresse</a>
-                                                <p>Désolé, vous n'avez pas encore d'adresse lié à votre compte.</p>
+                                                <a href="/adresse/new" class="button" id="btnregisterlogin">Ajouter une nouvelle adresse</a>
+                                                <p>Desole mais vous ne possédez pas encore d'adresse !</p>
                                             {% endif %}
                                         </div>
                                     </div>
