@@ -10,6 +10,9 @@
         </ul>
 
         <h1 id="tltphare">Produits</h1>
+        {% if is_granted('ROLE_ADMIN') %}
+            <a href="https://127.0.0.1:8000/admin?crudAction=index&crudControllerFqcn=App%5CController%5CAdmin%5CProduitCrudController&menuIndex=1&signature=TcOv6RHT6xojuR5PqztCpPFyk9N9JZHRt-WswYmntyc&submenuIndex=-1" class="button m-3" id="btn-article-create">Créer un nouvel article</a>
+        {% endif %}
 
         <div class="row">
             {% for produit in produits %}
@@ -19,7 +22,10 @@
                         <div class="card-body card-panier ">
                             <h5 class="card-title">{{ produit.nomProduit }}</h5>
                             <p class="card-text">{{ produit.descriptionProduit | raw }}</p>
-                            <a href="{{ path('produit_show',{'id':produit.id}) }}" class="btn btn-primary" id="btnregisterlogin">Voir le produit</a>
+                            <a href="{{ path('produit_show',{'id':produit.id}) }}" class="btn btn-primary mb-3" id="btnregisterlogin">Voir le produit</a>
+                            {% if is_granted('ROLE_ADMIN') %}
+                                <a href="{{ path('produit_edit', {'id': produit.id}) }}"  class="btn btn-primary" id="btnregisterlogin">Modifier l'article</a>
+                            {% endif %}
                         </div>
                     </div>
                 </div>

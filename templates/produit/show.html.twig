@@ -39,6 +39,10 @@
 
 
                     </div>
+                    {% if is_granted('ROLE_ADMIN') %}
+                        <a href="{{ path('produit_edit', {'id': produit.id}) }}" class="button m-3" id="btn-article-create">Modifier le produit</a>
+                        {{ include('produit/_delete_form.html.twig') }}
+                    {% endif %}
                     <a  id="buttonHeader" class="btn-back-produit"onclick="location.href='/produits'" role="button">Revenir aux produits</a>
 
                 </div>
