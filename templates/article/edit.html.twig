@@ -3,11 +3,19 @@
 {% block title %}Edit Article{% endblock %}
 
 {% block body %}
-    <h1>Edit Article</h1>
 
-    {{ include('article/_form.html.twig', {'button_label': 'Update'}) }}
+<div class="bodyhome pt-5">
+    <div id="titlearticle">
+        <h1 id="tltphare">Modifier Article</h1>
 
-    <a href="{{ path('article_index') }}">back to list</a>
-
+    </div>
+    <div class="col-12">
+        {{ include('article/_form.html.twig', {'button_label': 'Update'}) }}
+    </div>
     {{ include('article/_delete_form.html.twig') }}
+    <a href="{{ path('article_index') }}" class="button m-3" id="btn-article-create">Revenir en arrière</a>
+
+</div>
+
+
 {% endblock %}

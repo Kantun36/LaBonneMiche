@@ -25,10 +25,6 @@ class Article
      */
     private $Titre;
 
-    /**
-     * @ORM\Column(type="string", length=255)
-     */
-    private $Contenu;
 
     /**
      * @ORM\OneToOne(targetEntity=Image::class, mappedBy="Articles", cascade={"persist", "remove"})
@@ -44,6 +40,11 @@ class Article
      * @ORM\OneToMany(targetEntity=Commentaire::class, mappedBy="Articles")
      */
     private $commentaires;
+
+    /**
+     * @ORM\Column(type="text")
+     */
+    private $contenu;
 
     public function __construct()
     {
@@ -71,12 +72,12 @@ class Article
 
     public function getContenu(): ?string
     {
-        return $this->Contenu;
+        return $this->contenu;
     }
 
-    public function setContenu(string $Contenu): self
+    public function setContenu(string $contenu): self
     {
-        $this->Contenu = $Contenu;
+        $this->contenu = $contenu;
 
         return $this;
     }
