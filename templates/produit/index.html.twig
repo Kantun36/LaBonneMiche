@@ -1,11 +1,11 @@
 {% extends 'base.html.twig' %}
 
-{% block title %}Produits{% endblock %}
+{% block title %}Nos produits - LaBonneMiche{% endblock %}
 
 {% block body %}
     <div class="container-fluid bodyhome ">
         <ul class="breadcrumb">
-            <li class="href-top"><a class="href-top" href="/">Home</a> <span class="divider">/</span></li>
+            <li class="href-top"><a class="href-top" href="/">Accueil</a> <span class="divider">/</span></li>
             <li class="href-top active">Produits</li>
         </ul>
 
@@ -18,10 +18,10 @@
             {% for produit in produits %}
                 <div class="col-3 mb-2 mt-1">
                     <div class="card " style="width: 100%; height:100%;">
-                        <img src="{{asset('img/produits/'~produit.getCategorie~'/'~produit.getNomProduit~'.jpg')}}" class="img-responsive" width="auto" height="50%">
+                        <img src="{{asset('img/produits/'~ produit.getImageProduit())}}" class="img-responsive" width="auto" height="50%">
                         <div class="card-body card-panier ">
                             <h5 class="card-title">{{ produit.nomProduit }}</h5>
-                            <p class="card-text">{{ produit.descriptionProduit | raw }}</p>
+                            <p class="card-text" style="color:#e3b364">{{ produit.descriptionProduit | raw }}</p>
                             <a href="{{ path('produit_show',{'id':produit.id}) }}" class="btn btn-primary mb-3" id="btnregisterlogin">Voir le produit</a>
                             {% if is_granted('ROLE_ADMIN') %}
                                 <a href="{{ path('produit_edit', {'id': produit.id}) }}"  class="btn btn-primary" id="btnregisterlogin">Modifier l'article</a>

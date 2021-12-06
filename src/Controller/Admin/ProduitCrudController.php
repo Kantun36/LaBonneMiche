@@ -30,17 +30,12 @@ class ProduitCrudController extends AbstractCrudController
             TextField::new('nomProduit'),
             ChoiceField::new('Categorie')->setChoices(
                 [
-                    'pain'=>'pain',
-                    'baguette'=>'baguette',
-                    'miche'=>'miche',
-                    'vienoiserie individuel'=>'vienoiserie individuel',
-                    'vienoiserie en lot'=>'vienoiserie en lot',
-                    'sandwich'=>'sandwich',
-                    'dessert'=>'dessert',
-                    'salade'=>'salade',
-                    'plats chaud'=>'plats chaud',
-                    'patisserie individuel'=>'patisserie individuel',
-                    'gateau'=>'gateau',
+                    'Pain'=>'Pain',
+                    'Baguette'=>'Baguette',
+                    'Miche'=>'Miche',
+                    'Vienoiserie'=>'Vienoiserie',
+                    'Sandwich'=>'Sandwich',
+                    'Patisserie'=>'Patisserie',
 
                 ]
             ),
@@ -50,8 +45,8 @@ class ProduitCrudController extends AbstractCrudController
             IntegerField::new('quantiteProduit'),
             NumberField::new('poidsProduit'),
             AssociationField::new('Ingredients'),
-            ImageField::new('image')->setUploadDir("public/img/produits")
-                                                      ->setBasepath("public/img/produits"),
+            ImageField::new('imageProduit')->setUploadDir("public\img\produits")
+                ->setBasepath("public\img\produits"),
 
 
         ];

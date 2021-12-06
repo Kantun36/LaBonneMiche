@@ -1,6 +1,6 @@
 {% extends 'base.html.twig' %}
 
-{% block title %}Panier{% endblock %}
+{% block title %}Mon panier - LaBonneMiche{% endblock %}
 
 {% block body %}
 
@@ -25,7 +25,7 @@
                                 {% for element in panier.produits %}
 
                                     <tr>
-                                        <td class="product-thumbnail pb-5"><a class="btn btn-panier-produit" href="#"> <img src="{{asset('img/'~element.produit.getCategorie~'/'~element.produit.getNomProduit~'.jpg')}}" class="img-responsive" width="30%"></a></td>
+                                        <td class="product-thumbnail pb-5"><a class="btn btn-panier-produit" href="#"></a></td>
                                         <td class="product-name" data-title="Product"><a class="btn btn-panier-produit"  href="#">{{ element.produit.nomProduit }}</a></td>
                                         <td class="product-price" data-title="Price">{{ element.produit.prixProduit }}€</td>
                                         <td class="product-quantity" data-title="Quantity">

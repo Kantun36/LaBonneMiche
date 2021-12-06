@@ -19,7 +19,7 @@ class ProduitType extends AbstractType
             ->add('DescriptionProduit')
             ->add('Ingredients')
             ->add('commandes')
-            ->add('image')
+            ->add('imageProduit')
         ;
     }
 

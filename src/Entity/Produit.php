@@ -64,6 +64,11 @@ class Produit
      */
     private $Categorie;
 
+    /**
+     * @ORM\Column(type="string", length=255, nullable=true)
+     */
+    private $imageProduit;
+
     public function __construct()
     {
         $this->Ingredients = new ArrayCollection();
@@ -211,6 +216,18 @@ class Produit
     public function setCategorie(string $Categorie): self
     {
         $this->Categorie = $Categorie;
+
+        return $this;
+    }
+
+    public function getImageProduit(): ?string
+    {
+        return $this->imageProduit;
+    }
+
+    public function setImageProduit(?string $imageProduit): self
+    {
+        $this->imageProduit = $imageProduit;
 
         return $this;
     }

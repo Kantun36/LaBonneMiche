@@ -46,6 +46,11 @@ class Article
      */
     private $contenu;
 
+    /**
+     * @ORM\Column(type="string", length=255, nullable=true)
+     */
+    private $imageArticle;
+
     public function __construct()
     {
         $this->Paragraphes = new ArrayCollection();
@@ -161,6 +166,18 @@ class Article
     public function __toString()
     {
         return $this->getTitre();
+    }
+
+    public function getImageArticle(): ?string
+    {
+        return $this->imageArticle;
+    }
+
+    public function setImageArticle(?string $imageArticle): self
+    {
+        $this->imageArticle = $imageArticle;
+
+        return $this;
     }
 
 }

@@ -3,7 +3,7 @@
 
 <head>
     <meta charset="UTF-8">
-    <title>{% block title %}LaBonneMiche{% endblock %}</title>
+    <title>{% block title %}Accueil - LaBonneMiche{% endblock %}</title>
     {# Run `composer require symfony/webpack-encore-bundle`
            and uncomment the following Encore helpers to start using Symfony UX #}
     {% block stylesheets %}
@@ -76,7 +76,7 @@
                                         préparée avec amour <br>
                                         par nos meilleurs boulangers. </p>
                                 </div>
-                                <button class="button" id="btn-carous-view">Voir le produit</button>
+                                <button onclick="location.href='/produits/1'" class="button" id="btn-carous-view">Voir le produit</button>
                             </div>
                         </div>
                     </div>
@@ -92,7 +92,7 @@
                                     <p class="caroustxt"> Une petite faim ? <br>
                                         Notre fameux sandwich poulet crudités vous attends !</p>
                                 </div>
-                                <button  class="button" id="btn-carous-view">Voir le produit</button>
+                                <button onclick="location.href='/produits/3'" class="button" id="btn-carous-view">Voir le produit</button>
                             </div>
                             <div class="col-6 carousfond">
                                 <div id="carousimage ">
@@ -118,7 +118,7 @@
                                         Pas de soucis ! <br>
                                         Découvrez notre mille feuille. </p>
                                 </div>
-                                <button  class="button" id="btn-carous-view">Voir le produit</button>
+                                <button onclick="location.href='/produits/4'" class="button" id="btn-carous-view">Voir le produit</button>
                             </div>
                         </div>
                     </div>

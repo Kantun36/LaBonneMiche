@@ -1,4 +1,71 @@
-{{ form_start(form) }}
-    {{ form_widget(form) }}
-    <button class="btn">{{ button_label|default('Save') }}</button>
-{{ form_end(form) }}
+<!doctype html>
+</head>
+<body>
+
+<div class="bodyhome">
+    <div class="content">
+
+        <div class="container">
+            <div class="row align-items-stretch justify-content-center no-gutters">
+                <div class="col-md-7">
+                    <h3 class="text-center">Ajouter une nouvelle adresse</h3>
+                    <form class="mb-5" method="post" id="adresseForm" name="adresseForm">
+                        {{ form_start(form) }}
+                            <div class="row">
+                                <div class="col-md-6 form-group mb-3">
+
+                                    {{ form_widget(form.nom, {'attr': {'placeholder': 'Votre nom',
+                                        'class': 'form-control', 'required': 'true'}}) }}
+                                </div>
+                                <div class="col-md-6 form-group mb-3">
+
+                                    {{ form_widget(form.adresse, {'attr': {'placeholder': 'Adresse',
+                                        'class': 'form-control', 'required': 'true'}}) }}
+                                </div>
+                                <div class="col-md-6 form-group mb-3">
+
+                                    {{ form_widget(form.numeroRue, {'attr': {'placeholder': 'Numéro de rue',
+                                        'class': 'form-control', 'required': 'true'}}) }}
+                                </div>
+                                <div class="col-md-6 form-group mb-3">
+
+                                    {{ form_widget(form.complementAdresse, {'attr': {'placeholder': 'Complément adresse',
+                                        'class': 'form-control', 'required': 'true'}}) }}
+                                </div>
+                                <div class="col-md-6 form-group mb-3">
+
+                                    {{ form_widget(form.ville, {'attr': {'placeholder': 'Ville',
+                                        'class': 'form-control', 'required': 'true'}}) }}
+                                </div>
+                                <div class="col-md-6 form-group mb-3">
+
+                                    {{ form_widget(form.codePostal, {'attr': {'placeholder': 'Code postale',
+                                        'class': 'form-control', 'required': 'true'}}) }}
+                                </div>
+                                <div class="col-md-6 form-group mb-3">
+
+                                    {{ form_widget(form.pays, {'attr': {'placeholder': 'Pays',
+                                        'class': 'form-control', 'required': 'true'}}) }}
+                                </div>
+                            </div>
+                        <div class="row justify-content-center">
+                            <div class="col-md-5 form-group text-center">
+                                <input type="submit" value="Enregistrer" id="btnregisterlogin" class="btn  ">
+                                <span class="submitting"></span>
+                            </div>
+                        </div>
+                        {{ form_end(form) }}
+                    </form>
+
+
+                </div>
+            </div>
+        </div>
+
+    </div>
+
+</div>
+
+
+</body>
+</html>
